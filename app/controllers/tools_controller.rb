@@ -4,7 +4,7 @@ class ToolsController < ApplicationController
   # GET /tools
   # GET /tools.json
   def index
-    @tools = Tool.search(params[:search])
+    @tools = Tool.all
   end
 
   # GET /tools/1
