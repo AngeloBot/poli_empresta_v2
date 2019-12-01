@@ -1,5 +1,13 @@
 <p id="notice"><%= notice %></p>
 
+<h2>Procurar membro</h2>
+<%= form_tag students_path, :method => 'get' do %>
+	<p>
+		<%= text_field_tag :search, params[:search] %>
+		<%= submit_tag "Procurar", :name => nil %>
+	</p>
+<% end %>
+
 <h1>Students</h1>
 
 <table>
