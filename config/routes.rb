@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :tools
   resources :teams
   #get 'sessions/new'
   get 'signup', to: 'students#_form', as: 'signup'
