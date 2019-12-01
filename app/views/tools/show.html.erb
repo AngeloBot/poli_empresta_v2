@@ -1,5 +1,7 @@
 <p id="notice"><%= notice %></p>
 
+<%= image_tag(@tool.photo_url) %>
+
 <p>
   <strong>Name:</strong>
   <%= @tool.name %>
@@ -13,11 +15,6 @@
 <p>
   <strong>Quantity:</strong>
   <%= @tool.quantity %>
-</p>
-
-<p>
-  <strong>Photo:</strong>
-  <%= @tool.photo %>
 </p>
 
 <p>
