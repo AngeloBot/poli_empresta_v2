@@ -1,0 +1,604 @@
+Started GET "/" for ::1 at 2019-12-01 12:21:12 -0300
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate RAILS_ENV=development
+
+):
+  
+activerecord (5.1.7) lib/active_record/migration.rb:576:in `check_pending!'
+activerecord (5.1.7) lib/active_record/migration.rb:553:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+activesupport (5.1.7) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.7) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.7) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.7) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.7) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.7) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.7) lib/rails/engine.rb:522:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (200.1ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (117.2ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateStudents (20191201145425)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.4ms)[0m  [1m[35mCREATE TABLE "students" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "given_name" varchar, "family_name" varchar, "email" varchar, "password" varchar, "password_confirmation" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20191201145425"]]
+  [1m[35m (142.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.6ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (2.0ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2019-12-01 15:21:47.283286"], ["updated_at", "2019-12-01 15:21:47.283286"]]
+  [1m[35m (155.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for ::1 at 2019-12-01 12:22:07 -0300
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by StudentsController#index as HTML
+Completed 500 Internal Server Error in 25ms (ActiveRecord: 0.0ms)
+
+
+  
+LoadError (cannot load such file -- bcrypt):
+  
+app/models/student.rb:2:in `<class:Student>'
+app/models/student.rb:1:in `<top (required)>'
+app/controllers/students_controller.rb:7:in `index'
+Started GET "/" for ::1 at 2019-12-01 12:24:06 -0300
+Processing by StudentsController#index as HTML
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 0.0ms)
+
+
+  
+LoadError (cannot load such file -- bcrypt):
+  
+app/models/student.rb:2:in `<class:Student>'
+app/models/student.rb:1:in `<top (required)>'
+app/controllers/students_controller.rb:7:in `index'
+Started GET "/students" for ::1 at 2019-12-01 12:24:23 -0300
+Processing by StudentsController#index as HTML
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 0.0ms)
+
+
+  
+LoadError (cannot load such file -- bcrypt):
+  
+app/models/student.rb:2:in `<class:Student>'
+app/models/student.rb:1:in `<top (required)>'
+app/controllers/students_controller.rb:7:in `index'
+Started GET "/students" for ::1 at 2019-12-01 12:24:27 -0300
+Processing by StudentsController#index as HTML
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 0.0ms)
+
+
+  
+LoadError (cannot load such file -- bcrypt):
+  
+app/models/student.rb:2:in `<class:Student>'
+app/models/student.rb:1:in `<top (required)>'
+app/controllers/students_controller.rb:7:in `index'
+Started GET "/students" for ::1 at 2019-12-01 12:28:16 -0300
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by StudentsController#index as HTML
+  Rendering students/index.html.erb within layouts/application
+  [1m[36mStudent Load (0.4ms)[0m  [1m[34mSELECT "students".* FROM "students"[0m
+  Rendered students/index.html.erb within layouts/application (7.9ms)
+  Rendered application/_navigation.html.erb (1.0ms)
+Completed 200 OK in 2523ms (Views: 2470.4ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/students" for ::1 at 2019-12-01 12:28:47 -0300
+Processing by StudentsController#index as HTML
+  Rendering students/index.html.erb within layouts/application
+  [1m[36mStudent Load (0.9ms)[0m  [1m[34mSELECT "students".* FROM "students"[0m
+  Rendered students/index.html.erb within layouts/application (4.0ms)
+  Rendered application/_navigation.html.erb (0.8ms)
+Completed 200 OK in 320ms (Views: 280.4ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/students/new" for ::1 at 2019-12-01 12:28:50 -0300
+Processing by StudentsController#new as HTML
+  Rendering students/new.html.erb within layouts/application
+  Rendered students/_form.html.erb (32.4ms)
+  Rendered students/new.html.erb within layouts/application (67.2ms)
+  Rendered application/_navigation.html.erb (0.9ms)
+Completed 200 OK in 341ms (Views: 297.7ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/students" for ::1 at 2019-12-01 12:29:02 -0300
+Processing by StudentsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"AUuZZbf6pysyGcx4msflLVVyf2Lg6MLIfCKkBMDKznBPZrU2X1izf63UGEtXT66RIBo4AAN7YlQARf0/FRqiVA==", "student"=>{"given_name"=>"Luis", "family_name"=>"Huanca", "email"=>"luixen", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Create Student"}
+Completed 500 Internal Server Error in 624ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `password_digest=' for #<Student:0x000000000d4df5c8>
+Did you mean?  password=):
+  
+app/controllers/students_controller.rb:27:in `create'
+Started POST "/__web_console/repl_sessions/27887361c3d18c1db24a5b708a7a605e/trace" for ::1 at 2019-12-01 12:29:51 -0300
+Started POST "/students" for ::1 at 2019-12-01 12:43:03 -0300
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate RAILS_ENV=development
+
+):
+  
+activerecord (5.1.7) lib/active_record/migration.rb:576:in `check_pending!'
+activerecord (5.1.7) lib/active_record/migration.rb:553:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+activesupport (5.1.7) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.7) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.7) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.7) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.7) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.7) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.7) lib/rails/engine.rb:522:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddColumnToStudents (20191201154200)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (2.2ms)[0m  [1m[35mALTER TABLE "students" ADD "password_digest" varchar[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20191201154200"]]
+  [1m[35m (132.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.6ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started POST "/students" for ::1 at 2019-12-01 12:43:47 -0300
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by StudentsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"AUuZZbf6pysyGcx4msflLVVyf2Lg6MLIfCKkBMDKznBPZrU2X1izf63UGEtXT66RIBo4AAN7YlQARf0/FRqiVA==", "student"=>{"given_name"=>"Luis", "family_name"=>"Huanca", "email"=>"luixen", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Create Student"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.2ms)[0m  [1m[32mINSERT INTO "students" ("given_name", "family_name", "email", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?, ?, ?)[0m  [["given_name", "Luis"], ["family_name", "Huanca"], ["email", "luixen"], ["created_at", "2019-12-01 15:43:49.372964"], ["updated_at", "2019-12-01 15:43:49.372964"], ["password_digest", "$2a$12$DIGqSKH5FeUWuocmgdvZ6O88h7GfMvIZC7HJi24wRZt4A955ZhCHO"]]
+  [1m[35m (184.6ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Redirected to 
+Completed 500 Internal Server Error in 719ms (ActiveRecord: 187.5ms)
+
+
+  
+AbstractController::DoubleRenderError (Render and/or redirect were called multiple times in this action. Please note that you may only call render OR redirect, and at most once per action. Also note that neither redirect nor render terminate execution of the action, so if you want to exit an action after redirecting, you need to do something like "redirect_to(...) and return".):
+  
+app/controllers/students_controller.rb:31:in `block (2 levels) in create'
+app/controllers/students_controller.rb:29:in `create'
+Started POST "/students" for ::1 at 2019-12-01 12:45:27 -0300
+Processing by StudentsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"AUuZZbf6pysyGcx4msflLVVyf2Lg6MLIfCKkBMDKznBPZrU2X1izf63UGEtXT66RIBo4AAN7YlQARf0/FRqiVA==", "student"=>{"given_name"=>"Luis", "family_name"=>"Huanca", "email"=>"luixen", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Create Student"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.3ms)[0m  [1m[32mINSERT INTO "students" ("given_name", "family_name", "email", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?, ?, ?)[0m  [["given_name", "Luis"], ["family_name", "Huanca"], ["email", "luixen"], ["created_at", "2019-12-01 15:45:38.209617"], ["updated_at", "2019-12-01 15:45:38.209617"], ["password_digest", "$2a$12$.eUtvQ97qiR5uI8t57h8sONVajSS4iVMxN.2sR.jezXmNNkeJz4CW"]]
+  [1m[35m (185.5ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/students/2
+Completed 302 Found in 1017ms (ActiveRecord: 191.1ms)
+
+
+Started GET "/students/2" for ::1 at 2019-12-01 12:45:38 -0300
+Processing by StudentsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mStudent Load (0.5ms)[0m  [1m[34mSELECT  "students".* FROM "students" WHERE "students"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering students/show.html.erb within layouts/application
+  Rendered students/show.html.erb within layouts/application (1.2ms)
+  [1m[36mStudent Load (0.3ms)[0m  [1m[34mSELECT  "students".* FROM "students" WHERE "students"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered application/_navigation.html.erb (3.1ms)
+Completed 200 OK in 660ms (Views: 604.3ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/logout" for ::1 at 2019-12-01 12:45:44 -0300
+Processing by SessionsController#destroy as HTML
+Redirected to http://localhost:3000/
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2019-12-01 12:45:44 -0300
+Processing by StudentsController#index as HTML
+  Rendering students/index.html.erb within layouts/application
+  [1m[36mStudent Load (0.4ms)[0m  [1m[34mSELECT "students".* FROM "students"[0m
+  Rendered students/index.html.erb within layouts/application (3.6ms)
+  [1m[36mStudent Load (0.3ms)[0m  [1m[34mSELECT  "students".* FROM "students" WHERE "students"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered application/_navigation.html.erb (4.1ms)
+Completed 200 OK in 276ms (Views: 239.5ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/students" for ::1 at 2019-12-01 12:45:46 -0300
+Processing by StudentsController#index as HTML
+  Rendering students/index.html.erb within layouts/application
+  [1m[36mStudent Load (0.4ms)[0m  [1m[34mSELECT "students".* FROM "students"[0m
+  Rendered students/index.html.erb within layouts/application (5.0ms)
+  [1m[36mStudent Load (0.3ms)[0m  [1m[34mSELECT  "students".* FROM "students" WHERE "students"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered application/_navigation.html.erb (4.1ms)
+Completed 200 OK in 271ms (Views: 236.9ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/logout" for ::1 at 2019-12-01 12:45:50 -0300
+Processing by SessionsController#destroy as HTML
+Redirected to http://localhost:3000/
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2019-12-01 12:45:50 -0300
+Processing by StudentsController#index as HTML
+  Rendering students/index.html.erb within layouts/application
+  [1m[36mStudent Load (0.4ms)[0m  [1m[34mSELECT "students".* FROM "students"[0m
+  Rendered students/index.html.erb within layouts/application (4.8ms)
+  [1m[36mStudent Load (0.3ms)[0m  [1m[34mSELECT  "students".* FROM "students" WHERE "students"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered application/_navigation.html.erb (3.8ms)
+Completed 200 OK in 271ms (Views: 238.0ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/logout" for ::1 at 2019-12-01 12:45:53 -0300
+Processing by SessionsController#destroy as HTML
+Redirected to http://localhost:3000/
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2019-12-01 12:45:53 -0300
+Processing by StudentsController#index as HTML
+  Rendering students/index.html.erb within layouts/application
+  [1m[36mStudent Load (0.4ms)[0m  [1m[34mSELECT "students".* FROM "students"[0m
+  Rendered students/index.html.erb within layouts/application (4.6ms)
+  [1m[36mStudent Load (0.3ms)[0m  [1m[34mSELECT  "students".* FROM "students" WHERE "students"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered application/_navigation.html.erb (3.9ms)
+Completed 200 OK in 283ms (Views: 248.8ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/logout" for ::1 at 2019-12-01 12:46:14 -0300
+Processing by SessionsController#destroy as HTML
+Redirected to http://localhost:3000/
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2019-12-01 12:46:14 -0300
+Processing by StudentsController#index as HTML
+  Rendering students/index.html.erb within layouts/application
+  [1m[36mStudent Load (0.5ms)[0m  [1m[34mSELECT "students".* FROM "students"[0m
+  Rendered students/index.html.erb within layouts/application (5.1ms)
+  [1m[36mStudent Load (0.3ms)[0m  [1m[34mSELECT  "students".* FROM "students" WHERE "students"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered application/_navigation.html.erb (2.7ms)
+Completed 200 OK in 272ms (Views: 238.4ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/" for ::1 at 2019-12-01 15:40:43 -0300
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by StudentsController#index as HTML
+  Rendering students/index.html.erb within layouts/application
+  [1m[36mStudent Load (0.4ms)[0m  [1m[34mSELECT "students".* FROM "students"[0m
+  Rendered students/index.html.erb within layouts/application (25.1ms)
+  [1m[36mStudent Load (0.6ms)[0m  [1m[34mSELECT  "students".* FROM "students" WHERE "students"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered application/_navigation.html.erb (9.5ms)
+Completed 200 OK in 673ms (Views: 616.9ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/logout" for ::1 at 2019-12-01 15:40:46 -0300
+Processing by SessionsController#destroy as HTML
+Redirected to http://localhost:3000/
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2019-12-01 15:40:47 -0300
+Processing by StudentsController#index as HTML
+  Rendering students/index.html.erb within layouts/application
+  [1m[36mStudent Load (0.3ms)[0m  [1m[34mSELECT "students".* FROM "students"[0m
+  Rendered students/index.html.erb within layouts/application (6.0ms)
+  Rendered application/_navigation.html.erb (0.9ms)
+Completed 200 OK in 276ms (Views: 241.0ms | ActiveRecord: 0.8ms)
+
+
+Started DELETE "/students/2" for ::1 at 2019-12-01 15:40:52 -0300
+Processing by StudentsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"wSvuqyhEzONqzzgvc0xXdN535FJaQhLALtOQWUkobFAb6j1BUt8eBgsS27iNyhCIcJ8q33rCeg0mg14GVGRJog==", "id"=>"2"}
+  [1m[36mStudent Load (0.4ms)[0m  [1m[34mSELECT  "students".* FROM "students" WHERE "students"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.9ms)[0m  [1m[31mDELETE FROM "students" WHERE "students"."id" = ?[0m  [["id", 2]]
+  [1m[35m (194.0ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/students
+Completed 302 Found in 207ms (ActiveRecord: 196.4ms)
+
+
+Started GET "/students" for ::1 at 2019-12-01 15:40:52 -0300
+Processing by StudentsController#index as HTML
+  Rendering students/index.html.erb within layouts/application
+  [1m[36mStudent Load (0.4ms)[0m  [1m[34mSELECT "students".* FROM "students"[0m
+  Rendered students/index.html.erb within layouts/application (4.5ms)
+  Rendered application/_navigation.html.erb (1.2ms)
+Completed 200 OK in 280ms (Views: 245.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/sessions/new" for ::1 at 2019-12-01 15:40:59 -0300
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (1.4ms)
+  Rendered application/_navigation.html.erb (1.0ms)
+Completed 200 OK in 269ms (Views: 234.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/students/new" for ::1 at 2019-12-01 15:41:04 -0300
+Processing by StudentsController#new as HTML
+  Rendering students/new.html.erb within layouts/application
+  Rendered students/_form.html.erb (31.9ms)
+  Rendered students/new.html.erb within layouts/application (66.6ms)
+  Rendered application/_navigation.html.erb (0.9ms)
+Completed 200 OK in 338ms (Views: 304.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/students" for ::1 at 2019-12-01 15:41:21 -0300
+Processing by StudentsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ZggRT3HmvfFtEX3NlA1dSuzaN2zCMkk1KovWbi3EcfAoJT0cmUSppfLcqf5ZhRb2mbJwDiGh6alW7I9V+BQd1A==", "student"=>{"given_name"=>"Enrique", "family_name"=>"Champi", "email"=>"a20153229", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Create Student"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.1ms)[0m  [1m[32mINSERT INTO "students" ("given_name", "family_name", "email", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?, ?, ?)[0m  [["given_name", "Enrique"], ["family_name", "Champi"], ["email", "a20153229"], ["created_at", "2019-12-01 18:41:21.942876"], ["updated_at", "2019-12-01 18:41:21.942876"], ["password_digest", "$2a$12$G3gPhFgY1PvBrNB83vmO9u1gDnRXlK3HPp4qK4wJt2yCsd6ePLtNy"]]
+  [1m[35m (99.3ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/students/3
+Completed 302 Found in 602ms (ActiveRecord: 100.5ms)
+
+
+Started GET "/students/3" for ::1 at 2019-12-01 15:41:22 -0300
+Processing by StudentsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mStudent Load (0.6ms)[0m  [1m[34mSELECT  "students".* FROM "students" WHERE "students"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering students/show.html.erb within layouts/application
+  Rendered students/show.html.erb within layouts/application (1.1ms)
+  [1m[36mStudent Load (0.3ms)[0m  [1m[34mSELECT  "students".* FROM "students" WHERE "students"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered application/_navigation.html.erb (3.7ms)
+Completed 200 OK in 379ms (Views: 297.1ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/students" for ::1 at 2019-12-01 15:41:24 -0300
+Processing by StudentsController#index as HTML
+  Rendering students/index.html.erb within layouts/application
+  [1m[36mStudent Load (0.4ms)[0m  [1m[34mSELECT "students".* FROM "students"[0m
+  Rendered students/index.html.erb within layouts/application (4.8ms)
+  [1m[36mStudent Load (0.3ms)[0m  [1m[34mSELECT  "students".* FROM "students" WHERE "students"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered application/_navigation.html.erb (3.9ms)
+Completed 200 OK in 268ms (Views: 234.1ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/logout" for ::1 at 2019-12-01 15:44:49 -0300
+Processing by SessionsController#destroy as HTML
+Redirected to http://localhost:3000/
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2019-12-01 15:44:49 -0300
+Processing by StudentsController#index as HTML
+  Rendering students/index.html.erb within layouts/application
+  [1m[36mStudent Load (0.5ms)[0m  [1m[34mSELECT "students".* FROM "students"[0m
+  Rendered students/index.html.erb within layouts/application (5.7ms)
+  Rendered application/_navigation.html.erb (1.0ms)
+Completed 200 OK in 283ms (Views: 244.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/sessions/new" for ::1 at 2019-12-01 15:44:51 -0300
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (1.4ms)
+  Rendered application/_navigation.html.erb (0.9ms)
+Completed 200 OK in 272ms (Views: 238.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/sessions" for ::1 at 2019-12-01 15:44:55 -0300
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"w+U6G2vzMvgm4g+myYJ6ZNH9CMKK0/PdETijPr0NcIvRuLrmZ3WHNbD6qdBCXd0goJvRsUPTxSFcN7ISOtbMrg==", "email"=>"luixen", "password"=>"[FILTERED]", "commit"=>"Log In"}
+  [1m[36mStudent Load (0.5ms)[0m  [1m[34mSELECT  "students".* FROM "students" WHERE "students"."email" = ? LIMIT ?[0m  [["email", "luixen"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 596ms (ActiveRecord: 0.5ms)
+
+
+Started GET "/" for ::1 at 2019-12-01 15:44:56 -0300
+Processing by StudentsController#index as HTML
+  Rendering students/index.html.erb within layouts/application
+  [1m[36mStudent Load (0.5ms)[0m  [1m[34mSELECT "students".* FROM "students"[0m
+  Rendered students/index.html.erb within layouts/application (6.8ms)
+  [1m[36mStudent Load (0.3ms)[0m  [1m[34mSELECT  "students".* FROM "students" WHERE "students"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered application/_navigation.html.erb (4.5ms)
+Completed 200 OK in 379ms (Views: 300.5ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/logout" for ::1 at 2019-12-01 15:45:00 -0300
+Processing by SessionsController#destroy as HTML
+Redirected to http://localhost:3000/
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2019-12-01 15:45:00 -0300
+Processing by StudentsController#index as HTML
+  Rendering students/index.html.erb within layouts/application
+  [1m[36mStudent Load (0.5ms)[0m  [1m[34mSELECT "students".* FROM "students"[0m
+  Rendered students/index.html.erb within layouts/application (6.1ms)
+  Rendered application/_navigation.html.erb (0.9ms)
+Completed 200 OK in 574ms (Views: 470.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/sessions/new" for ::1 at 2019-12-01 15:45:02 -0300
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (1.4ms)
+  Rendered application/_navigation.html.erb (0.8ms)
+Completed 200 OK in 261ms (Views: 226.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/sessions" for ::1 at 2019-12-01 15:45:15 -0300
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"E9/9lgakBcpQ+f6gnCjjPY7yO0fMC50tG1bTNrqcaw8Bgn1rCiKwB8bhWNYX90R5/5TiNAULq9FWWcIaPUfXKg==", "email"=>"Enrique", "password"=>"[FILTERED]", "commit"=>"Log In"}
+  [1m[36mStudent Load (0.4ms)[0m  [1m[34mSELECT  "students".* FROM "students" WHERE "students"."email" = ? LIMIT ?[0m  [["email", "Enrique"], ["LIMIT", 1]]
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (1.5ms)
+  Rendered application/_navigation.html.erb (1.0ms)
+Completed 200 OK in 234ms (Views: 231.1ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/sessions" for ::1 at 2019-12-01 15:45:17 -0300
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"r39p3KmobxJ3dhBfx4KhPQytBKDg8HFnZ5iV8jtxJKd1vro20zO99xar88g5BObBokXKLcBwGapvyFutJj0BVQ==", "email"=>"Enrique", "password"=>"[FILTERED]", "commit"=>"Log In"}
+  [1m[36mStudent Load (0.4ms)[0m  [1m[34mSELECT  "students".* FROM "students" WHERE "students"."email" = ? LIMIT ?[0m  [["email", "Enrique"], ["LIMIT", 1]]
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (1.3ms)
+  Rendered application/_navigation.html.erb (0.9ms)
+Completed 200 OK in 249ms (Views: 244.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/students" for ::1 at 2019-12-01 15:45:20 -0300
+Processing by StudentsController#index as HTML
+  Rendering students/index.html.erb within layouts/application
+  [1m[36mStudent Load (0.4ms)[0m  [1m[34mSELECT "students".* FROM "students"[0m
+  Rendered students/index.html.erb within layouts/application (5.0ms)
+  Rendered application/_navigation.html.erb (0.9ms)
+Completed 200 OK in 269ms (Views: 234.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/sessions/new" for ::1 at 2019-12-01 15:45:26 -0300
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (1.4ms)
+  Rendered application/_navigation.html.erb (0.9ms)
+Completed 200 OK in 275ms (Views: 242.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/sessions" for ::1 at 2019-12-01 15:45:32 -0300
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"1xf5nDCNcTWJL/B6gU6h8UpbwqFIBK4uGqSP3unrwczFSnlhPAvE+B83VgwKkQa1Oz0b0oEEmNJXq57ybjB96Q==", "email"=>"a20153229", "password"=>"[FILTERED]", "commit"=>"Log In"}
+  [1m[36mStudent Load (0.4ms)[0m  [1m[34mSELECT  "students".* FROM "students" WHERE "students"."email" = ? LIMIT ?[0m  [["email", "a20153229"], ["LIMIT", 1]]
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (1.4ms)
+  Rendered application/_navigation.html.erb (0.9ms)
+Completed 200 OK in 734ms (Views: 241.0ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/sessions" for ::1 at 2019-12-01 15:45:36 -0300
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"SkI3bYNTwsdrLouQ0IaE5jpDaLscAo17qqle72RC0HOQg+SH+cgQIgrzaAcuAMMalKumNjyC5bai+ZCweQ71gQ==", "email"=>"a20153229", "password"=>"[FILTERED]", "commit"=>"Log In"}
+  [1m[36mStudent Load (0.3ms)[0m  [1m[34mSELECT  "students".* FROM "students" WHERE "students"."email" = ? LIMIT ?[0m  [["email", "a20153229"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 679ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/" for ::1 at 2019-12-01 15:45:36 -0300
+Processing by StudentsController#index as HTML
+  Rendering students/index.html.erb within layouts/application
+  [1m[36mStudent Load (0.6ms)[0m  [1m[34mSELECT "students".* FROM "students"[0m
+  Rendered students/index.html.erb within layouts/application (5.6ms)
+  [1m[36mStudent Load (0.3ms)[0m  [1m[34mSELECT  "students".* FROM "students" WHERE "students"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered application/_navigation.html.erb (3.9ms)
+Completed 200 OK in 375ms (Views: 291.4ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/logout" for ::1 at 2019-12-01 15:48:38 -0300
+Processing by SessionsController#destroy as HTML
+Redirected to http://localhost:3000/
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2019-12-01 15:48:38 -0300
+Processing by StudentsController#index as HTML
+  Rendering students/index.html.erb within layouts/application
+  [1m[36mStudent Load (0.5ms)[0m  [1m[34mSELECT "students".* FROM "students"[0m
+  Rendered students/index.html.erb within layouts/application (5.7ms)
+  Rendered application/_navigation.html.erb (1.0ms)
+Completed 200 OK in 290ms (Views: 256.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/students/new" for ::1 at 2019-12-01 15:48:40 -0300
+Processing by StudentsController#new as HTML
+  Rendering students/new.html.erb within layouts/application
+  Rendered students/_form.html.erb (4.9ms)
+  Rendered students/new.html.erb within layouts/application (40.2ms)
+  Rendered application/_navigation.html.erb (0.9ms)
+Completed 200 OK in 301ms (Views: 267.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/students" for ::1 at 2019-12-01 15:48:42 -0300
+Processing by StudentsController#index as HTML
+  Rendering students/index.html.erb within layouts/application
+  [1m[36mStudent Load (0.4ms)[0m  [1m[34mSELECT "students".* FROM "students"[0m
+  Rendered students/index.html.erb within layouts/application (4.8ms)
+  Rendered application/_navigation.html.erb (0.9ms)
+Completed 200 OK in 263ms (Views: 229.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/students/new" for ::1 at 2019-12-01 15:48:44 -0300
+Processing by StudentsController#new as HTML
+  Rendering students/new.html.erb within layouts/application
+  Rendered students/_form.html.erb (4.5ms)
+  Rendered students/new.html.erb within layouts/application (38.6ms)
+  Rendered application/_navigation.html.erb (0.9ms)
+Completed 200 OK in 330ms (Views: 295.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/students" for ::1 at 2019-12-01 15:49:02 -0300
+Processing by StudentsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"TQD0ksHGtLKeaOIe4OXT947PCIfgnaC2krvOXeybau4DLdjBKWSg5gGlNi0tbZhL+6dP5QMOACru3JdmOUsGyg==", "student"=>{"given_name"=>"147", "family_name"=>"bgt", "email"=>"aws", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Create Student"}
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (2.3ms)[0m  [1m[32mINSERT INTO "students" ("given_name", "family_name", "email", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?, ?, ?)[0m  [["given_name", "147"], ["family_name", "bgt"], ["email", "aws"], ["created_at", "2019-12-01 18:49:03.454071"], ["updated_at", "2019-12-01 18:49:03.454071"], ["password_digest", "$2a$12$M6TOqSwXtnz7i/ss40eEn.9gNpHtK6g1YsWYR4/9c.YkXgsL2M5Li"]]
+  [1m[35m (141.4ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/students/4
+Completed 302 Found in 824ms (ActiveRecord: 144.0ms)
+
+
+Started GET "/students/4" for ::1 at 2019-12-01 15:49:03 -0300
+Processing by StudentsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mStudent Load (0.6ms)[0m  [1m[34mSELECT  "students".* FROM "students" WHERE "students"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering students/show.html.erb within layouts/application
+  Rendered students/show.html.erb within layouts/application (1.5ms)
+  [1m[36mStudent Load (0.3ms)[0m  [1m[34mSELECT  "students".* FROM "students" WHERE "students"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendered application/_navigation.html.erb (3.9ms)
+Completed 200 OK in 352ms (Views: 260.2ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/students" for ::1 at 2019-12-01 15:49:06 -0300
+Processing by StudentsController#index as HTML
+  Rendering students/index.html.erb within layouts/application
+  [1m[36mStudent Load (0.4ms)[0m  [1m[34mSELECT "students".* FROM "students"[0m
+  Rendered students/index.html.erb within layouts/application (5.1ms)
+  [1m[36mStudent Load (0.3ms)[0m  [1m[34mSELECT  "students".* FROM "students" WHERE "students"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendered application/_navigation.html.erb (4.1ms)
+Completed 200 OK in 281ms (Views: 247.2ms | ActiveRecord: 0.7ms)
+
+

@@ -1,0 +1,14 @@
+<p>
+	<%= link_to "Students", students_path %> |
+
+	<% if current_student %>
+		Logged in as <%= current_student.email %>.
+		<%= link_to "Log Out", logout_path %>
+	<% else %>
+
+	<%= link_to 'Sign Up', new_student_path %> |
+	<%= link_to "Log In", new_session_path %>
+	<% end %>
+</p>
+
+<hr>
