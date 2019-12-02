@@ -38,13 +38,13 @@
   </div>
 
   <% if session[:created_team]==false %>
- 
+
     <div class="field">
       <%= form.label :team_id %>
       <%#= form.text_field :team_id, id: :student_team_id %>
-      <%= form.select:team_id,Team.all.collect{|s|[s.name, s.id]} %>
+      <%= form.select :team_id, Team.all.collect{|s|[s.name, s.id]} %>
     </div>
-  
+
   <%end%>
 
   <div class="field">

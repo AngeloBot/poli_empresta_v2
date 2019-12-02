@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  accepted: false
+  returned: false
+  borrower_id: 1
+  owner_id: 1
+  tool_quantity: 1
+  start: 2019-12-02
+  end: 2019-12-02
+
+two:
+  accepted: false
+  returned: false
+  borrower_id: 1
+  owner_id: 1
+  tool_quantity: 1
+  start: 2019-12-02
+  end: 2019-12-02

@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
-  resources :tools
-  resources :teams do
-    resources :students
+  resources :tools do
+    resources :loans
   end
+  resources :teams
   #get 'sessions/new'
   get 'signup', to: 'students#new', as: 'signup'
   get 'logout', to: 'sessions#destroy', as: 'logout'
