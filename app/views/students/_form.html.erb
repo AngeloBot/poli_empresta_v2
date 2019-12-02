@@ -38,6 +38,17 @@
   </div>
 
   <div class="field">
+    <%= form.label :team_id %>
+    <%#= form.text_field :team_id, id: :student_team_id %>
+    <%= form.select:team_id,Team.all.collect{|s|[s.name, s.id]} %>
+  </div>
+
+  <div class="field">
+    <%= form.label :admin %>
+    <%= form.check_box :admin, id: :student_admin %>
+  </div>
+
+  <div class="field">
     <%= form.label :photo %>
     <%= form.file_field :photo, id: :student_photo %>
   </div>

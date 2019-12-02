@@ -10,4 +10,7 @@ class Student < ApplicationRecord
 		end
 	end
 
+	def name
+		given_name+" "+family_name
+	end
 end

@@ -1,5 +1,7 @@
 <p>
+	<%= link_to "Teams", teams_path %> |
 	<%= link_to "Students", students_path %> |
+	<%= link_to "Tools", tools_path %> |
 
 	<% if current_student %>
 		Logged in as <%= current_student.email %>.
