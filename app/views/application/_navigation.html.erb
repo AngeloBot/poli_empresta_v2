@@ -7,7 +7,8 @@
 		<%= link_to "Log Out", logout_path %> |
 
 	<% else %>
-	<%= link_to 'Sign Up', new_student_path %> |
+	<%= link_to 'Sign Up as Member', new_student_path %> |
+	<%= link_to 'Sign Up as Team Admin', new_team_path %> |	
 	<%= link_to "Log In", new_session_path %>
 	<% end %>
 </p>

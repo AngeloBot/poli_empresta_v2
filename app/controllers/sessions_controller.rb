@@ -13,7 +13,14 @@ class SessionsController < ApplicationController
   end
 
   def destroy
+
+    if session[:admin_pendente]
+      team.session[:team].destroy
+    end
     session[:student_id] = nil
+    session[:created_team] = false
+    session[:team] = nil
+    session[:admin_pendente]=false
     redirect_to root_url, notice: "Logged out!"
   end
 
