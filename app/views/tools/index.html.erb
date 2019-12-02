@@ -29,7 +29,7 @@
         <td><%= tool.description %></td>
         <td><%= tool.quantity %></td>
         <td><%= tool.photo %></td>
-        <td><%= tool.team_id %></td>
+        <td><%= tool.team.name %></td>
         <td><%= link_to 'Show', tool %></td>
         <td><%= link_to 'Edit', edit_tool_path(tool) %></td>
         <td><%= link_to 'Destroy', tool, method: :delete, data: { confirm: 'Are you sure?' } %></td>

@@ -12,5 +12,41 @@
   <%= @team.description %>
 </p>
 
+<h3>Tools</h3>
+<% if !@team.tools.empty? %>
+  <table>
+    <tr>
+      <th>Name</th>
+      <th>Quantity</th>
+    </tr>
+  <% @team.tools.each do |tool| %>
+    <tr>
+      <td><%= tool.name %></td>
+      <td><%= tool.quantity %></td>
+    </tr>
+  <% end %>
+  </table>
+<% else %>
+  <p><%= @team.name %> hasn't won any tools yet.</p>
+<% end %>
+
+<h3>Students</h3>
+<% if !@team.students.empty? %>
+  <table>
+    <tr>
+      <th>Name</th>
+      <th>Email</th>      
+    </tr>
+  <% @team.students.each do |student| %>
+    <tr>
+      <td><%= student.name %></td>
+      <td><%= student.email %></td>
+    </tr>
+  <% end %>
+  </table>
+<% else %>
+  <p><%= @team.name %> hasn't won any students yet.</p>
+<% end %>
+
 <%= link_to 'Edit', edit_team_path(@team) %> |
 <%= link_to 'Back', teams_path %>
