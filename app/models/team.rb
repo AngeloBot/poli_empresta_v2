@@ -3,7 +3,7 @@ class Team < ApplicationRecord
 	has_many :students, dependent: :destroy
 	
 	mount_uploader :photo, ImageUploader
-	
+
 
 	def self.search(search)
 		if search
