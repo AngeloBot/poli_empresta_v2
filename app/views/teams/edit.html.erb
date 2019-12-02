@@ -1,6 +1,14 @@
+<% if @student.admin %>
+
 <h1>Editing Team</h1>
 
 <%= render 'form', team: @team %>
 
-<%= link_to 'Show', @team %> |
-<%= link_to 'Back', teams_path %>
+<%= render partial: "perfil", locals: {team: @team, edit: true} %>
+
+<%= link_to 'Back', @team %>
+
+<!-- estudante não é admin -->
+<% else %>
+Você não possui permissão para editar as informações dessa equipe.
+<% end %>

@@ -20,6 +20,7 @@ class TeamsController < ApplicationController
 
   # GET /teams/1/edit
   def edit
+    @student = Student.find(session[:student_id])
   end
 
   # POST /teams
