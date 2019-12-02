@@ -25,24 +25,25 @@ class StudentsController < ApplicationController
   # POST /students
   # POST /students.json
   def create
+
     @student = Student.new(student_params)
+    if session[:created_team]
+      @student.team_id = session[:team]
+      @student.admin = true
+      session[:admin_pendente]=false
+    end
 
     respond_to do |format|
       if @student.save
         format.html { redirect_to @student, notice: 'Student was successfully created.' }
         format.json { render :show, status: :created, location: @student }
         session[:student_id] = @student.id
-        
-        if session[:created_team]
-          @student.team_id = session[:team]
-          session[:admin_pendente]=false
-          @student.admin = true
-        end 
+
         #redirect_to root_url, notice: "Thank you for signing up!"
       else
         format.html { render :new }
         format.json { render json: @student.errors, status: :unprocessable_entity }
-        
+
       end
     end
   end
@@ -73,17 +74,13 @@ class StudentsController < ApplicationController
 
   private
     # Use callbacks to share common setup or constraints between actions.
+
     def set_student
       @student = Student.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def student_params
-
-      if session[:created_team]
-        @team_id = session[:team]
-      end
       params.require(:student).permit(:given_name, :family_name, :email, :password, :password_confirmation, :photo, :admin, :team_id)
-      
     end
 end
