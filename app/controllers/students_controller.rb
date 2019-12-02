@@ -35,6 +35,7 @@ class StudentsController < ApplicationController
         if session[:created_team]
           @student.team_id = session[:team]
           session[:admin_pendente]=false
+          @student.admin = true
         end 
         #redirect_to root_url, notice: "Thank you for signing up!"
       else
@@ -78,10 +79,10 @@ class StudentsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def student_params
 
-      if sessions[:created_team]
-        params.require(:student).permit(:given_name, :family_name, :email, :password, :password_confirmation)
-      else
-        params.require(:student).permit(:given_name, :family_name, :email, :password, :password_confirmation, :team_id)
+      if session[:created_team]
+        @team_id = session[:team]
       end
+        params.require(:student).permit(:given_name, :family_name, :email, :password, :password_confirmation, :team_id)
+      
     end
 end
