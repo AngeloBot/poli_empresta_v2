@@ -1,4 +1,6 @@
-<%= image_tag(team.photo_url) %>
+
+
+<%= image_tag(@team.photo_url) %>
 
 <p>
   <strong>Name:</strong>
@@ -42,7 +44,7 @@
     </tr>
   <% team.students.each do |student| %>
     <tr>
-      <td><%= student.name %></td>
+      <td><%= link_to student.name, student_path(id: student.id) %></td>
       <td><%= student.email %></td>
       <% if edit %>
         <td><%= link_to 'Show', student %></td>

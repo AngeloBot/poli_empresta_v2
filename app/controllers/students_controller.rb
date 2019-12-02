@@ -12,6 +12,7 @@ class StudentsController < ApplicationController
   # GET /students/1.json
   def show
   end
+  
 
   # GET /students/new
   def new
