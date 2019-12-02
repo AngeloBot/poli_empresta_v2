@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   resources :tools
   resources :teams
   #get 'sessions/new'
-  get 'signup', to: 'students#_form', as: 'signup'
+  get 'signup', to: 'students#new', as: 'signup'
   get 'logout', to: 'sessions#destroy', as: 'logout'
 
   resources :students
