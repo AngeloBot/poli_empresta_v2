@@ -4,12 +4,20 @@ class TeamsController < ApplicationController
   # GET /teams
   # GET /teams.json
   def index
+
+    Team.all.each do |team|
+    	if team.students.empty?
+    	  team.destroy
+    	end
+    end
+
     @teams = Team.search(params[:search])
   end
 
   # GET /teams/1
   # GET /teams/1.json
   def show
+    @student = Student.find(session[:student_id])
   end
 
   # GET /teams/new
@@ -19,6 +27,7 @@ class TeamsController < ApplicationController
 
   # GET /teams/1/edit
   def edit
+    @student = Student.find(session[:student_id])
   end
 
   # POST /teams
@@ -60,7 +69,7 @@ class TeamsController < ApplicationController
   def destroy
     @team.destroy
     respond_to do |format|
-      format.html { redirect_to teams_url, notice: 'Team was successfully destroyed.' }
+      format.html { redirect_to teams_url }
       format.json { head :no_content }
     end
   end

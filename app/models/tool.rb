@@ -10,5 +10,8 @@ class Tool < ApplicationRecord
 		end
 	end
 
+	def self.available?(tool)
+		tool.quantity > 0
+	end
 
 end

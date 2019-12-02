@@ -2,7 +2,7 @@
 
 	<% if current_student %>
 		<%= link_to "Team", teams_path %>
-		<%= link_to "Profile", current_student_path %>
+		<%= link_to "Profile", current_student %>
 		Logged in as <%= current_student.email %>.
 		<%= link_to "Log Out", logout_path %> |
 

@@ -5,6 +5,7 @@ class StudentsController < ApplicationController
   # GET /students.json
   def index
     @students = Student.search(params[:search])
+    @current_student = Student.find(session[:student_id])
   end
 
   # GET /students/1
@@ -82,7 +83,7 @@ class StudentsController < ApplicationController
       if session[:created_team]
         @team_id = session[:team]
       end
-        params.require(:student).permit(:given_name, :family_name, :email, :password, :password_confirmation, :team_id)
+      params.require(:student).permit(:given_name, :family_name, :email, :password, :password_confirmation, :photo, :admin, :team_id)
       
     end
 end

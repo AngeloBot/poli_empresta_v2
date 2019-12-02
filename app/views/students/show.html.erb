@@ -23,20 +23,14 @@
 </p>
 
 <p>
-  <strong>Admin:</strong>
-  <%= @student.admin %>
+  <strong>Qualificação:</strong>
+  <% if @student.admin %>
+    Administrador
+  <% else %>
+    Membro
+  <% end %>
 </p>
 
-
-<p>
-  <strong>Password:</strong>
-  <%= @student.password %>
-</p>
-
-<p>
-  <strong>Password confirmation:</strong>
-  <%= @student.password_confirmation %>
-</p>
 
 <%= link_to 'Edit', edit_student_path(@student) %> |
 <%= link_to 'Back', students_path %>
