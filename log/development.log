@@ -2456,3 +2456,381 @@ Processing by SessionsController#new as HTML
 Completed 200 OK in 52ms (Views: 48.4ms | ActiveRecord: 0.0ms)
 
 
+Started GET "/teams" for ::1 at 2019-12-02 16:36:21 -0300
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by TeamsController#index as HTML
+  Rendering teams/index.html.erb within layouts/application
+  [1m[36mTeam Load (0.2ms)[0m  [1m[34mSELECT "teams".* FROM "teams"[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "tools" WHERE "tools"."team_id" = ?[0m  [["team_id", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "students" WHERE "students"."team_id" = ?[0m  [["team_id", "1"]]
+  Rendered teams/index.html.erb within layouts/application (57.2ms)
+  Rendered application/_navigation.html.erb (0.5ms)
+Completed 200 OK in 330ms (Views: 307.1ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/students/4" for ::1 at 2019-12-02 16:36:30 -0300
+Processing by StudentsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT  "students".* FROM "students" WHERE "students"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering students/show.html.erb within layouts/application
+  [1m[36mTeam Load (0.2ms)[0m  [1m[34mSELECT  "teams".* FROM "teams" WHERE "teams"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered students/show.html.erb within layouts/application (11.6ms)
+  Rendered application/_navigation.html.erb (0.4ms)
+Completed 200 OK in 87ms (Views: 69.9ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/students/4" for ::1 at 2019-12-02 16:43:15 -0300
+Processing by StudentsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mStudent Load (0.3ms)[0m  [1m[34mSELECT  "students".* FROM "students" WHERE "students"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering students/show.html.erb within layouts/application
+  Rendered students/show.html.erb within layouts/application (0.8ms)
+Completed 500 Internal Server Error in 17ms (ActiveRecord: 0.3ms)
+
+
+  
+SyntaxError (/mnt/c/Users/tutu_/Documents/GitHub/poli_empresta_v2.2/app/views/students/show.html.erb:27: syntax error, unexpected ')', expecting then or ';' or '\n'
+...er.append=( if @student.admin );@output_buffer.safe_append='
+...                              ^
+/mnt/c/Users/tutu_/Documents/GitHub/poli_empresta_v2.2/app/views/students/show.html.erb:29: syntax error, unexpected else, expecting ')'
+'.freeze;   else 
+            ^~~~
+/mnt/c/Users/tutu_/Documents/GitHub/poli_empresta_v2.2/app/views/students/show.html.erb:31: syntax error, unexpected end, expecting ')'
+'.freeze;   end 
+            ^~~
+/mnt/c/Users/tutu_/Documents/GitHub/poli_empresta_v2.2/app/views/students/show.html.erb:38: syntax error, unexpected ensure, expecting ')'
+          ensure
+          ^~~~~~
+/mnt/c/Users/tutu_/Documents/GitHub/poli_empresta_v2.2/app/views/students/show.html.erb:40: syntax error, unexpected end, expecting ')'
+          end
+          ^~~):
+  
+app/views/students/show.html.erb:27: syntax error, unexpected ')', expecting then or ';' or '\n'
+app/views/students/show.html.erb:29: syntax error, unexpected else, expecting ')'
+app/views/students/show.html.erb:31: syntax error, unexpected end, expecting ')'
+app/views/students/show.html.erb:38: syntax error, unexpected ensure, expecting ')'
+app/views/students/show.html.erb:40: syntax error, unexpected end, expecting ')'
+Started GET "/students/4" for ::1 at 2019-12-02 16:43:28 -0300
+Processing by StudentsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT  "students".* FROM "students" WHERE "students"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering students/show.html.erb within layouts/application
+  [1m[36mTeam Load (0.2ms)[0m  [1m[34mSELECT  "teams".* FROM "teams" WHERE "teams"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered students/show.html.erb within layouts/application (1.9ms)
+  Rendered application/_navigation.html.erb (0.5ms)
+Completed 200 OK in 65ms (Views: 58.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/students/new" for ::1 at 2019-12-02 16:53:49 -0300
+Processing by StudentsController#new as HTML
+  Rendering students/new.html.erb within layouts/application
+  [1m[36mTeam Load (0.2ms)[0m  [1m[34mSELECT "teams".* FROM "teams"[0m
+  Rendered students/_form.html.erb (38.7ms)
+  Rendered students/new.html.erb within layouts/application (43.1ms)
+  Rendered application/_navigation.html.erb (0.8ms)
+Completed 200 OK in 122ms (Views: 97.9ms | ActiveRecord: 2.0ms)
+
+
+Started POST "/students" for ::1 at 2019-12-02 16:53:59 -0300
+Processing by StudentsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"o2dHT1BtOxyMIN77ij6hwEaBX3nizvpog/goHguJPit9SBVUIC1Uyh9J9dm66cI37iOZY/5KXGjVshQg7cMULA==", "student"=>{"given_name"=>"htrh", "family_name"=>"hdrthdg", "email"=>"hstrh", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "team_id"=>"1", "admin"=>"1", "photo"=>#<ActionDispatch::Http::UploadedFile:0x00007fb40d7b81d0 @tempfile=#<Tempfile:/tmp/RackMultipart20191202-697-1rrv54u.jpg>, @original_filename="54x6OVp_d.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"student[photo]\"; filename=\"54x6OVp_d.jpg\"\r\nContent-Type: image/jpeg\r\n">}, "commit"=>"Create Student"}
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTeam Load (0.2ms)[0m  [1m[34mSELECT  "teams".* FROM "teams" WHERE "teams"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "students" ("given_name", "family_name", "email", "created_at", "updated_at", "password_digest", "photo", "admin", "team_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["given_name", "htrh"], ["family_name", "hdrthdg"], ["email", "hstrh"], ["created_at", "2019-12-02 19:53:59.646972"], ["updated_at", "2019-12-02 19:53:59.646972"], ["password_digest", "$2a$12$fp9y2fpOUCsULWz1B8W9ROEPdQYPtoR2xBne.Gvtt.SfgywECMXNe"], ["photo", "54x6OVp_d.jpg"], ["admin", "t"], ["team_id", "1"]]
+  [1m[35m (2.3ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/students/5
+Completed 302 Found in 217ms (ActiveRecord: 3.4ms)
+
+
+Started GET "/students/5" for ::1 at 2019-12-02 16:53:59 -0300
+Processing by StudentsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mStudent Load (0.3ms)[0m  [1m[34mSELECT  "students".* FROM "students" WHERE "students"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering students/show.html.erb within layouts/application
+  [1m[36mTeam Load (0.2ms)[0m  [1m[34mSELECT  "teams".* FROM "teams" WHERE "teams"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered students/show.html.erb within layouts/application (2.1ms)
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT  "students".* FROM "students" WHERE "students"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendered application/_navigation.html.erb (4.3ms)
+Completed 200 OK in 78ms (Views: 67.6ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/teams" for ::1 at 2019-12-02 16:54:01 -0300
+Processing by TeamsController#index as HTML
+  Rendering teams/index.html.erb within layouts/application
+  [1m[36mTeam Load (0.2ms)[0m  [1m[34mSELECT "teams".* FROM "teams"[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "tools" WHERE "tools"."team_id" = ?[0m  [["team_id", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "students" WHERE "students"."team_id" = ?[0m  [["team_id", "1"]]
+  Rendered teams/index.html.erb within layouts/application (14.7ms)
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT  "students".* FROM "students" WHERE "students"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendered application/_navigation.html.erb (2.9ms)
+Completed 200 OK in 78ms (Views: 73.4ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/teams" for ::1 at 2019-12-02 16:54:28 -0300
+Processing by TeamsController#index as HTML
+  Rendering teams/index.html.erb within layouts/application
+  [1m[36mTeam Load (0.2ms)[0m  [1m[34mSELECT "teams".* FROM "teams"[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "tools" WHERE "tools"."team_id" = ?[0m  [["team_id", 1]]
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "students" WHERE "students"."team_id" = ?[0m  [["team_id", "1"]]
+  Rendered teams/index.html.erb within layouts/application (5.7ms)
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT  "students".* FROM "students" WHERE "students"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendered application/_navigation.html.erb (1.8ms)
+Completed 200 OK in 65ms (Views: 59.2ms | ActiveRecord: 1.3ms)
+
+
+  [1m[36mTeam Load (0.2ms)[0m  [1m[34mSELECT  "teams".* FROM "teams" ORDER BY "teams"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mTeam Load (0.2ms)[0m  [1m[34mSELECT  "teams".* FROM "teams" ORDER BY "teams"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT  "students".* FROM "students" WHERE "students"."team_id" = ? LIMIT ?[0m  [["team_id", "1"], ["LIMIT", 11]]
+  [1m[36mTeam Load (0.2ms)[0m  [1m[34mSELECT  "teams".* FROM "teams" ORDER BY "teams"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mStudent Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "students" WHERE "students"."team_id" = ? LIMIT ?[0m  [["team_id", "1"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (2.2ms)[0m  [1m[32mINSERT INTO "teams" ("created_at", "updated_at") VALUES (?, ?)[0m  [["created_at", "2019-12-02 20:03:02.988653"], ["updated_at", "2019-12-02 20:03:02.988653"]]
+  [1m[35m (2.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mStudent Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "students" WHERE "students"."team_id" = ? LIMIT ?[0m  [["team_id", "2"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTool Load (0.1ms)[0m  [1m[34mSELECT "tools".* FROM "tools" WHERE "tools"."team_id" = ?[0m  [["team_id", 2]]
+  [1m[36mStudent Load (0.1ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."team_id" = ?[0m  [["team_id", "2"]]
+  [1m[35mSQL (3.7ms)[0m  [1m[31mDELETE FROM "teams" WHERE "teams"."id" = ?[0m  [["id", 2]]
+  [1m[35m (2.3ms)[0m  [1m[36mcommit transaction[0m
+Started GET "/teams" for ::1 at 2019-12-02 17:04:08 -0300
+Processing by TeamsController#index as HTML
+  [1m[36mTeam Load (0.1ms)[0m  [1m[34mSELECT "teams".* FROM "teams"[0m
+  [1m[36mStudent Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "students" WHERE "students"."team_id" = ? LIMIT ?[0m  [["team_id", "1"], ["LIMIT", 1]]
+  Rendering teams/index.html.erb within layouts/application
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "tools" WHERE "tools"."team_id" = ?[0m  [["team_id", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "students" WHERE "students"."team_id" = ?[0m  [["team_id", "1"]]
+  Rendered teams/index.html.erb within layouts/application (11.7ms)
+  [1m[36mStudent Load (0.1ms)[0m  [1m[34mSELECT  "students".* FROM "students" WHERE "students"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendered application/_navigation.html.erb (9.5ms)
+Completed 200 OK in 112ms (Views: 76.4ms | ActiveRecord: 3.4ms)
+
+
+Started GET "/teams" for ::1 at 2019-12-02 17:04:11 -0300
+Processing by TeamsController#index as HTML
+  [1m[36mTeam Load (0.2ms)[0m  [1m[34mSELECT "teams".* FROM "teams"[0m
+  [1m[36mStudent Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "students" WHERE "students"."team_id" = ? LIMIT ?[0m  [["team_id", "1"], ["LIMIT", 1]]
+  Rendering teams/index.html.erb within layouts/application
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "tools" WHERE "tools"."team_id" = ?[0m  [["team_id", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "students" WHERE "students"."team_id" = ?[0m  [["team_id", "1"]]
+  Rendered teams/index.html.erb within layouts/application (2.8ms)
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT  "students".* FROM "students" WHERE "students"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendered application/_navigation.html.erb (4.0ms)
+Completed 200 OK in 71ms (Views: 61.3ms | ActiveRecord: 1.0ms)
+
+
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (2.0ms)[0m  [1m[32mINSERT INTO "teams" ("created_at", "updated_at") VALUES (?, ?)[0m  [["created_at", "2019-12-02 20:04:17.202847"], ["updated_at", "2019-12-02 20:04:17.202847"]]
+  [1m[35m (2.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTeam Load (0.2ms)[0m  [1m[34mSELECT  "teams".* FROM "teams" LIMIT ?[0m  [["LIMIT", 11]]
+Started GET "/teams" for ::1 at 2019-12-02 17:04:29 -0300
+Processing by TeamsController#index as HTML
+  [1m[36mTeam Load (0.2ms)[0m  [1m[34mSELECT "teams".* FROM "teams"[0m
+  [1m[36mStudent Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "students" WHERE "students"."team_id" = ? LIMIT ?[0m  [["team_id", "1"], ["LIMIT", 1]]
+  [1m[36mStudent Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "students" WHERE "students"."team_id" = ? LIMIT ?[0m  [["team_id", "3"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTool Load (0.2ms)[0m  [1m[34mSELECT "tools".* FROM "tools" WHERE "tools"."team_id" = ?[0m  [["team_id", 3]]
+  [1m[36mStudent Load (0.1ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."team_id" = ?[0m  [["team_id", "3"]]
+  [1m[35mSQL (1.9ms)[0m  [1m[31mDELETE FROM "teams" WHERE "teams"."id" = ?[0m  [["id", 3]]
+  [1m[35m (3.2ms)[0m  [1m[36mcommit transaction[0m
+  Rendering teams/index.html.erb within layouts/application
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "tools" WHERE "tools"."team_id" = ?[0m  [["team_id", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "students" WHERE "students"."team_id" = ?[0m  [["team_id", "1"]]
+  Rendered teams/index.html.erb within layouts/application (7.4ms)
+Completed 500 Internal Server Error in 39ms (ActiveRecord: 6.4ms)
+
+
+  
+ActionView::Template::Error (nil is not a valid asset source):
+    24:   <tbody>
+    25:     <% @teams.each do |team| %>
+    26:       <tr>
+    27: 				<td><%= image_tag(team.photo_url) %></td>
+    28:         <td><%= link_to team.name, team %></td>
+    29:         <td><%= team.description %></td>
+    30:         <td><%= team.tools.count %></td>
+  
+app/views/teams/index.html.erb:27:in `block in _app_views_teams_index_html_erb__2175967650261868541_70205469649100'
+app/views/teams/index.html.erb:25:in `_app_views_teams_index_html_erb__2175967650261868541_70205469649100'
+Started GET "/teams" for ::1 at 2019-12-02 17:06:58 -0300
+Processing by TeamsController#index as HTML
+  [1m[36mTeam Load (0.2ms)[0m  [1m[34mSELECT "teams".* FROM "teams"[0m
+  [1m[36mStudent Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "students" WHERE "students"."team_id" = ? LIMIT ?[0m  [["team_id", "1"], ["LIMIT", 1]]
+  Rendering teams/index.html.erb within layouts/application
+  [1m[36mCACHE Student Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "students" WHERE "students"."team_id" = ? LIMIT ?[0m  [["team_id", "1"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "tools" WHERE "tools"."team_id" = ?[0m  [["team_id", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "students" WHERE "students"."team_id" = ?[0m  [["team_id", "1"]]
+  Rendered teams/index.html.erb within layouts/application (13.2ms)
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT  "students".* FROM "students" WHERE "students"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendered application/_navigation.html.erb (2.5ms)
+Completed 200 OK in 77ms (Views: 66.5ms | ActiveRecord: 1.1ms)
+
+
+  [1m[36mTeam Load (0.2ms)[0m  [1m[34mSELECT  "teams".* FROM "teams" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (3.7ms)[0m  [1m[32mINSERT INTO "teams" ("created_at", "updated_at") VALUES (?, ?)[0m  [["created_at", "2019-12-02 20:07:13.790018"], ["updated_at", "2019-12-02 20:07:13.790018"]]
+  [1m[35m (2.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTeam Load (0.2ms)[0m  [1m[34mSELECT  "teams".* FROM "teams" LIMIT ?[0m  [["LIMIT", 11]]
+Started GET "/teams" for ::1 at 2019-12-02 17:07:18 -0300
+Processing by TeamsController#index as HTML
+  [1m[36mTeam Load (0.2ms)[0m  [1m[34mSELECT "teams".* FROM "teams"[0m
+  [1m[36mStudent Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "students" WHERE "students"."team_id" = ? LIMIT ?[0m  [["team_id", "1"], ["LIMIT", 1]]
+  [1m[36mStudent Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "students" WHERE "students"."team_id" = ? LIMIT ?[0m  [["team_id", "4"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTool Load (0.2ms)[0m  [1m[34mSELECT "tools".* FROM "tools" WHERE "tools"."team_id" = ?[0m  [["team_id", 4]]
+  [1m[36mStudent Load (0.1ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."team_id" = ?[0m  [["team_id", "4"]]
+  [1m[35mSQL (1.9ms)[0m  [1m[31mDELETE FROM "teams" WHERE "teams"."id" = ?[0m  [["id", 4]]
+  [1m[35m (2.6ms)[0m  [1m[36mcommit transaction[0m
+  Rendering teams/index.html.erb within layouts/application
+  [1m[36mStudent Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "students" WHERE "students"."team_id" = ? LIMIT ?[0m  [["team_id", "1"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "tools" WHERE "tools"."team_id" = ?[0m  [["team_id", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "students" WHERE "students"."team_id" = ?[0m  [["team_id", "1"]]
+  Rendered teams/index.html.erb within layouts/application (15.1ms)
+Completed 500 Internal Server Error in 56ms (ActiveRecord: 6.4ms)
+
+
+  
+ActionView::Template::Error (nil is not a valid asset source):
+    31:   <tbody>
+    32:     <% @teams.each do |team| %>
+    33:       <tr>
+    34: 				<td><%= image_tag(team.photo_url) %></td>
+    35:         <td><%= link_to team.name, team %></td>
+    36:         <td><%= team.description %></td>
+    37:         <td><%= team.tools.count %></td>
+  
+app/views/teams/index.html.erb:34:in `block in _app_views_teams_index_html_erb__2175967650261868541_70205602961880'
+app/views/teams/index.html.erb:32:in `_app_views_teams_index_html_erb__2175967650261868541_70205602961880'
+  [1m[36mTeam Load (0.3ms)[0m  [1m[34mSELECT  "teams".* FROM "teams" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (2.3ms)[0m  [1m[32mINSERT INTO "teams" ("created_at", "updated_at") VALUES (?, ?)[0m  [["created_at", "2019-12-02 20:10:55.694785"], ["updated_at", "2019-12-02 20:10:55.694785"]]
+  [1m[35m (1.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTeam Load (0.2ms)[0m  [1m[34mSELECT  "teams".* FROM "teams" LIMIT ?[0m  [["LIMIT", 11]]
+Started GET "/teams" for ::1 at 2019-12-02 17:11:01 -0300
+Processing by TeamsController#index as HTML
+  [1m[36mTeam Load (0.3ms)[0m  [1m[34mSELECT "teams".* FROM "teams"[0m
+  [1m[36mStudent Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "students" WHERE "students"."team_id" = ? LIMIT ?[0m  [["team_id", "1"], ["LIMIT", 1]]
+  [1m[36mStudent Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "students" WHERE "students"."team_id" = ? LIMIT ?[0m  [["team_id", "5"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTool Load (0.2ms)[0m  [1m[34mSELECT "tools".* FROM "tools" WHERE "tools"."team_id" = ?[0m  [["team_id", 5]]
+  [1m[36mStudent Load (0.1ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."team_id" = ?[0m  [["team_id", "5"]]
+  [1m[35mSQL (1.9ms)[0m  [1m[31mDELETE FROM "teams" WHERE "teams"."id" = ?[0m  [["id", 5]]
+  [1m[35m (2.5ms)[0m  [1m[36mcommit transaction[0m
+  Rendering teams/index.html.erb within layouts/application
+  [1m[36mStudent Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "students" WHERE "students"."team_id" = ? LIMIT ?[0m  [["team_id", "1"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "tools" WHERE "tools"."team_id" = ?[0m  [["team_id", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "students" WHERE "students"."team_id" = ?[0m  [["team_id", "1"]]
+  Rendered teams/index.html.erb within layouts/application (13.2ms)
+Completed 500 Internal Server Error in 43ms (ActiveRecord: 6.2ms)
+
+
+  
+ActionView::Template::Error (nil is not a valid asset source):
+    31:   <tbody>
+    32:     <% @teams.each do |team| %>
+    33:       <tr>
+    34: 				<td><%= image_tag(team.photo_url) %></td>
+    35:         <td><%= link_to team.name, team %></td>
+    36:         <td><%= team.description %></td>
+    37:         <td><%= team.tools.count %></td>
+  
+app/views/teams/index.html.erb:34:in `block in _app_views_teams_index_html_erb__2175967650261868541_70205602552920'
+app/views/teams/index.html.erb:32:in `_app_views_teams_index_html_erb__2175967650261868541_70205602552920'
+  [1m[36mTeam Load (0.2ms)[0m  [1m[34mSELECT  "teams".* FROM "teams" LIMIT ?[0m  [["LIMIT", 11]]
+Started GET "/teams" for ::1 at 2019-12-02 17:12:20 -0300
+Processing by TeamsController#index as HTML
+  [1m[36mTeam Load (0.1ms)[0m  [1m[34mSELECT "teams".* FROM "teams"[0m
+  [1m[36mStudent Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "students" WHERE "students"."team_id" = ? LIMIT ?[0m  [["team_id", "1"], ["LIMIT", 1]]
+  Rendering teams/index.html.erb within layouts/application
+  [1m[36mCACHE Team Load (0.0ms)[0m  [1m[34mSELECT "teams".* FROM "teams"[0m
+  [1m[36mCACHE Student Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "students" WHERE "students"."team_id" = ? LIMIT ?[0m  [["team_id", "1"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "tools" WHERE "tools"."team_id" = ?[0m  [["team_id", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "students" WHERE "students"."team_id" = ?[0m  [["team_id", "1"]]
+  Rendered teams/index.html.erb within layouts/application (19.7ms)
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT  "students".* FROM "students" WHERE "students"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendered application/_navigation.html.erb (16.7ms)
+Completed 200 OK in 158ms (Views: 117.9ms | ActiveRecord: 3.3ms)
+
+
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (4.0ms)[0m  [1m[32mINSERT INTO "teams" ("created_at", "updated_at") VALUES (?, ?)[0m  [["created_at", "2019-12-02 20:12:25.621389"], ["updated_at", "2019-12-02 20:12:25.621389"]]
+  [1m[35m (2.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTeam Load (0.2ms)[0m  [1m[34mSELECT  "teams".* FROM "teams" LIMIT ?[0m  [["LIMIT", 11]]
+Started GET "/teams" for ::1 at 2019-12-02 17:12:30 -0300
+Processing by TeamsController#index as HTML
+  [1m[36mTeam Load (0.2ms)[0m  [1m[34mSELECT "teams".* FROM "teams"[0m
+  [1m[36mStudent Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "students" WHERE "students"."team_id" = ? LIMIT ?[0m  [["team_id", "1"], ["LIMIT", 1]]
+  [1m[36mStudent Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "students" WHERE "students"."team_id" = ? LIMIT ?[0m  [["team_id", "6"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTool Load (0.2ms)[0m  [1m[34mSELECT "tools".* FROM "tools" WHERE "tools"."team_id" = ?[0m  [["team_id", 6]]
+  [1m[36mStudent Load (0.1ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."team_id" = ?[0m  [["team_id", "6"]]
+  [1m[35mSQL (3.4ms)[0m  [1m[31mDELETE FROM "teams" WHERE "teams"."id" = ?[0m  [["id", 6]]
+  [1m[35m (1.9ms)[0m  [1m[36mcommit transaction[0m
+  Rendering teams/index.html.erb within layouts/application
+  [1m[36mTeam Load (0.2ms)[0m  [1m[34mSELECT "teams".* FROM "teams"[0m
+  [1m[36mStudent Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "students" WHERE "students"."team_id" = ? LIMIT ?[0m  [["team_id", "1"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "tools" WHERE "tools"."team_id" = ?[0m  [["team_id", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "students" WHERE "students"."team_id" = ?[0m  [["team_id", "1"]]
+  Rendered teams/index.html.erb within layouts/application (6.1ms)
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT  "students".* FROM "students" WHERE "students"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendered application/_navigation.html.erb (1.9ms)
+Completed 200 OK in 101ms (Views: 63.3ms | ActiveRecord: 7.5ms)
+
+
+  [1m[36mTeam Load (0.2ms)[0m  [1m[34mSELECT  "teams".* FROM "teams" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (2.2ms)[0m  [1m[32mINSERT INTO "teams" ("created_at", "updated_at") VALUES (?, ?)[0m  [["created_at", "2019-12-02 20:12:37.020004"], ["updated_at", "2019-12-02 20:12:37.020004"]]
+  [1m[35m (2.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (2.2ms)[0m  [1m[32mINSERT INTO "teams" ("created_at", "updated_at") VALUES (?, ?)[0m  [["created_at", "2019-12-02 20:12:38.775377"], ["updated_at", "2019-12-02 20:12:38.775377"]]
+  [1m[35m (2.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (2.2ms)[0m  [1m[32mINSERT INTO "teams" ("created_at", "updated_at") VALUES (?, ?)[0m  [["created_at", "2019-12-02 20:12:39.401396"], ["updated_at", "2019-12-02 20:12:39.401396"]]
+  [1m[35m (1.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (2.2ms)[0m  [1m[32mINSERT INTO "teams" ("created_at", "updated_at") VALUES (?, ?)[0m  [["created_at", "2019-12-02 20:12:39.794466"], ["updated_at", "2019-12-02 20:12:39.794466"]]
+  [1m[35m (2.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTeam Load (0.2ms)[0m  [1m[34mSELECT  "teams".* FROM "teams" LIMIT ?[0m  [["LIMIT", 11]]
+Started GET "/teams" for ::1 at 2019-12-02 17:12:45 -0300
+Processing by TeamsController#index as HTML
+  [1m[36mTeam Load (0.2ms)[0m  [1m[34mSELECT "teams".* FROM "teams"[0m
+  [1m[36mStudent Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "students" WHERE "students"."team_id" = ? LIMIT ?[0m  [["team_id", "1"], ["LIMIT", 1]]
+  [1m[36mStudent Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "students" WHERE "students"."team_id" = ? LIMIT ?[0m  [["team_id", "7"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTool Load (0.2ms)[0m  [1m[34mSELECT "tools".* FROM "tools" WHERE "tools"."team_id" = ?[0m  [["team_id", 7]]
+  [1m[36mStudent Load (0.1ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."team_id" = ?[0m  [["team_id", "7"]]
+  [1m[35mSQL (1.9ms)[0m  [1m[31mDELETE FROM "teams" WHERE "teams"."id" = ?[0m  [["id", 7]]
+  [1m[35m (2.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mStudent Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "students" WHERE "students"."team_id" = ? LIMIT ?[0m  [["team_id", "8"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTool Load (0.4ms)[0m  [1m[34mSELECT "tools".* FROM "tools" WHERE "tools"."team_id" = ?[0m  [["team_id", 8]]
+  [1m[36mStudent Load (0.1ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."team_id" = ?[0m  [["team_id", "8"]]
+  [1m[35mSQL (1.0ms)[0m  [1m[31mDELETE FROM "teams" WHERE "teams"."id" = ?[0m  [["id", 8]]
+  [1m[35m (2.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mStudent Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "students" WHERE "students"."team_id" = ? LIMIT ?[0m  [["team_id", "9"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTool Load (0.2ms)[0m  [1m[34mSELECT "tools".* FROM "tools" WHERE "tools"."team_id" = ?[0m  [["team_id", 9]]
+  [1m[36mStudent Load (0.1ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."team_id" = ?[0m  [["team_id", "9"]]
+  [1m[35mSQL (1.3ms)[0m  [1m[31mDELETE FROM "teams" WHERE "teams"."id" = ?[0m  [["id", 9]]
+  [1m[35m (2.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mStudent Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "students" WHERE "students"."team_id" = ? LIMIT ?[0m  [["team_id", "10"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTool Load (0.2ms)[0m  [1m[34mSELECT "tools".* FROM "tools" WHERE "tools"."team_id" = ?[0m  [["team_id", 10]]
+  [1m[36mStudent Load (0.1ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."team_id" = ?[0m  [["team_id", "10"]]
+  [1m[35mSQL (0.8ms)[0m  [1m[31mDELETE FROM "teams" WHERE "teams"."id" = ?[0m  [["id", 10]]
+  [1m[35m (2.4ms)[0m  [1m[36mcommit transaction[0m
+  Rendering teams/index.html.erb within layouts/application
+  [1m[36mTeam Load (0.2ms)[0m  [1m[34mSELECT "teams".* FROM "teams"[0m
+  [1m[36mStudent Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "students" WHERE "students"."team_id" = ? LIMIT ?[0m  [["team_id", "1"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "tools" WHERE "tools"."team_id" = ?[0m  [["team_id", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "students" WHERE "students"."team_id" = ?[0m  [["team_id", "1"]]
+  Rendered teams/index.html.erb within layouts/application (9.6ms)
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT  "students".* FROM "students" WHERE "students"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendered application/_navigation.html.erb (1.9ms)
+Completed 200 OK in 124ms (Views: 66.7ms | ActiveRecord: 17.8ms)
+
+
+  [1m[36mTeam Load (0.2ms)[0m  [1m[34mSELECT  "teams".* FROM "teams" LIMIT ?[0m  [["LIMIT", 11]]

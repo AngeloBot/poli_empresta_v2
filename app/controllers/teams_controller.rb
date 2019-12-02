@@ -4,6 +4,13 @@ class TeamsController < ApplicationController
   # GET /teams
   # GET /teams.json
   def index
+
+    Team.all.each do |team|
+    	if team.students.empty?
+    	  team.destroy
+    	end
+    end
+
     @teams = Team.search(params[:search])
   end
 
@@ -58,7 +65,7 @@ class TeamsController < ApplicationController
   def destroy
     @team.destroy
     respond_to do |format|
-      format.html { redirect_to teams_url, notice: 'Team was successfully destroyed.' }
+      format.html { redirect_to teams_url }
       format.json { head :no_content }
     end
   end

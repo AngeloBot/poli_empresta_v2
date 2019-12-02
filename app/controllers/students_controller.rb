@@ -5,6 +5,7 @@ class StudentsController < ApplicationController
   # GET /students.json
   def index
     @students = Student.search(params[:search])
+    @current_student = Student.find(session[:student_id])
   end
 
   # GET /students/1
