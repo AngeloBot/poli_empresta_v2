@@ -33,15 +33,19 @@ class TeamsController < ApplicationController
   # POST /teams
   # POST /teams.json
   def create
-    @team = Team.new(team_params)
+    @team = Team.new(team_params)    
 
     respond_to do |format|
       if @team.save
-        format.html { redirect_to @team, notice: 'Team was successfully created.' }
+        format.html { redirect_to new_student_path}
         format.json { render :show, status: :created, location: @team }
+        session[:created_team]=1
+        session[:team]=@team.id
+        session[:admin_pendente]=true
       else
         format.html { render :new }
         format.json { render json: @team.errors, status: :unprocessable_entity }
+        
       end
     end
   end
