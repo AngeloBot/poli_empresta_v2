@@ -26,7 +26,7 @@
         <td><%= team.name %></td>
         <td><%= team.description %></td>
         <td><%= team.tools.count %></td>
-        <td><%= team.students.count %></td>
+        <td><% team.students.count %></td>
         <td><%= team.photo %></td>
         <td><%= link_to 'Show', team %></td>
         <td><%= link_to 'Edit', edit_team_path(team) %></td>
