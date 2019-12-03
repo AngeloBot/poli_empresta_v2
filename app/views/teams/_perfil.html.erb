@@ -23,6 +23,7 @@
     </tr>
   <% team.tools.each do |tool| %>
     <tr>
+      <td><%= image_tag(tool.photo_url)%></td>
       <td><%= link_to tool.name, tool_path(id: tool.id) %></td>
       <td><%= tool.quantity %></td>
       <td><%= tool.description %></td>
@@ -39,15 +40,17 @@
 <% end %>
 
 
-<h3>Students</h3>
+<h3>Members</h3>
 <% if !team.students.empty? %>
   <table>
     <tr>
+      <th></th>
       <th>Name</th>
       <th>Email</th>
     </tr>
   <% team.students.each do |student| %>
     <tr>
+      <td><%= image_tag(student.photo_url)%></td>
       <td><%= link_to student.name, student_path(id: student.id) %></td>
       <td><%= student.email %></td>
       <% if edit %>

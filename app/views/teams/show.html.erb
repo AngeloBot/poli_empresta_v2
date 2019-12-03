@@ -2,15 +2,6 @@
 
 <%= render partial: "perfil", locals: {team: @team, edit: false} %>
 
-<p>
-  <strong>Name:</strong>
-  <%= @team.name %>
-</p>
-
-<p>
-  <strong>Description:</strong>
-  <%= @team.description %>
-</p>
 
 <% if @student.admin %>
   <%= link_to 'Add New Tool', new_tool_path %> |
