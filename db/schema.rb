@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20191202233000) do
+ActiveRecord::Schema.define(version: 20191203163901) do
 
   create_table "loans", force: :cascade do |t|
     t.boolean "accepted", default: false
@@ -36,7 +36,8 @@ ActiveRecord::Schema.define(version: 20191202233000) do
     t.string "password_digest"
     t.string "photo"
     t.boolean "admin", default: false
-    t.string "team_id"
+    t.string "team_password"
+    t.integer "team_id"
   end
 
   create_table "teams", force: :cascade do |t|
@@ -45,6 +46,7 @@ ActiveRecord::Schema.define(version: 20191202233000) do
     t.string "photo"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "password"
   end
 
   create_table "tools", force: :cascade do |t|

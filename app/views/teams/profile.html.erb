@@ -1,8 +1,8 @@
 <p id="notice"><%= notice %></p>
 
-<%= render partial: "perfil", locals: {team: @team_profile, edit: false} %>
+<%= render partial: "perfil", locals: {team: @team_profile, edit: false, adm: false} %>
 
-<% if @student.admin %>
+<% if @student.admin && Student.find(session[:student_id]).team_id == @team.id %>
   <%= link_to 'Edit', edit_team_path(@team_profile) %> |
 <% end %>
 <%= link_to 'Back', teams_path %>

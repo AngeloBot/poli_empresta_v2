@@ -12,6 +12,13 @@
   <%= team.description %>
 </p>
 
+<% if current_student.admin && current_student.team_id == @team.id %>
+<p>
+  <strong>Password:</strong>
+  <td><%= team.password %></td>
+</p>
+<% end %>
+
 <h3>Tools</h3>
 <% if !team.tools.empty? %>
   <table>
@@ -28,7 +35,7 @@
       <td><%= tool.quantity %></td>
       <td><%= tool.description %></td>
       <td><%= link_to 'Show', tool %></td>
-      <% if current_student.admin && current_student.team_id == @team.id %>
+      <% if edit  %>
         <td><%= link_to 'Edit', tool, method: :edit %></td>
         <td><%= link_to 'Destroy', tool, method: :delete, data: { confirm: 'Are you sure you want to delete this tool?' } %></td>
       <% end %>
@@ -63,4 +70,3 @@
 <% else %>
   <p><%= team.name %> is full of nothing!.</p>
 <% end %>
-

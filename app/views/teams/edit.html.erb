@@ -1,10 +1,10 @@
-<% if @student.admin %>
+<% if current_student.admin && current_student.team_id == @team.id %>
 
 <h1>Editing Team</h1>
 
 <%= render 'form', team: @team %>
 
-<%= render partial: "perfil", locals: {team: @team, edit: true} %>
+<%= render partial: "perfil", locals: {team: @team, edit: true, adm: true} %>
 
 <%= link_to 'Back', @team %>
 

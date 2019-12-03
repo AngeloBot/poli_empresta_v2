@@ -1,9 +1,8 @@
 <p id="notice"><%= notice %></p>
 
-<%= render partial: "perfil", locals: {team: @team, edit: false} %>
+<%= render partial: "perfil", locals: {team: @team, edit: false, adm: current_student.admin && current_student.team_id == @team.id} %>
 
-
-<% if @student.admin %>
+<% if @student.admin && @student.team_id.to_i == @team.id %>
   <%= link_to 'Add New Tool', new_tool_path %> |
   <%= link_to 'Edit', edit_team_path(@team) %> |
 <% end %>
