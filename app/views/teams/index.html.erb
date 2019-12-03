@@ -23,7 +23,8 @@
 			<th><!--Photo--></th>
       <th>Name</th>
       <th>Description</th>
-			<th>Tool Quantity</th>
+      <%#<th>Tool Quantity</th>%>
+      <th>Members</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -34,7 +35,7 @@
 				<td><%= image_tag(team.photo_url) %></td>
         <td><%= link_to team.name, team %></td>
         <td><%= team.description %></td>
-        <td><%= team.tools.count %></td>
+        <td><%#= team.tools.count %></td>
         <td><%= team.students.count %></td>
       </tr>
     <% end %>
@@ -43,4 +44,4 @@
 
 <br>
 
-<%= link_to 'New Team', new_team_path %>
+<%#= link_to 'New Team', new_team_path %>
