@@ -8554,3 +8554,609 @@ Completed 200 OK in 76ms (Views: 72.1ms | ActiveRecord: 0.2ms)
   [1m[36mTeam Load (0.2ms)[0m  [1m[34mSELECT  "teams".* FROM "teams" ORDER BY "teams"."id" ASC LIMIT ? OFFSET ?[0m  [["LIMIT", 1], ["OFFSET", 3]]
   [1m[36mTeam Load (0.2ms)[0m  [1m[34mSELECT  "teams".* FROM "teams" WHERE "teams"."id" = ? LIMIT ?[0m  [["id", 20], ["LIMIT", 1]]
   [1m[36mTeam Load (0.2ms)[0m  [1m[34mSELECT  "teams".* FROM "teams" WHERE "teams"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mStudent Load (3.1ms)[0m  [1m[34mSELECT  "students".* FROM "students" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mTeam Load (0.3ms)[0m  [1m[34mSELECT  "teams".* FROM "teams" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mTool Load (0.3ms)[0m  [1m[34mSELECT  "tools".* FROM "tools" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35mSQL (3.2ms)[0m  [1m[31mDELETE FROM "teams"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.2ms)[0m  [1m[32mINSERT INTO "teams" ("name", "description", "photo", "created_at", "updated_at", "password") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "AAA"], ["description", "Equipe de exemplo AAA"], ["photo", nil], ["created_at", "2019-12-03 20:18:28.133122"], ["updated_at", "2019-12-03 20:18:28.133122"], ["password", "AAA"]]
+  [1m[35m (2.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.1ms)[0m  [1m[32mINSERT INTO "teams" ("name", "description", "photo", "created_at", "updated_at", "password") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "BBB"], ["description", "Equipe de exemplo BBB"], ["photo", nil], ["created_at", "2019-12-03 20:18:28.138403"], ["updated_at", "2019-12-03 20:18:28.138403"], ["password", "BBB"]]
+  [1m[35m (2.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.3ms)[0m  [1m[32mINSERT INTO "teams" ("name", "description", "photo", "created_at", "updated_at", "password") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "CCC"], ["description", "Equipe de exemplo CCC"], ["photo", nil], ["created_at", "2019-12-03 20:18:28.143944"], ["updated_at", "2019-12-03 20:18:28.143944"], ["password", "CCC"]]
+  [1m[35m (2.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTeam Load (0.2ms)[0m  [1m[34mSELECT  "teams".* FROM "teams" WHERE "teams"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTeam Load (0.2ms)[0m  [1m[34mSELECT  "teams".* FROM "teams" WHERE "teams"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTeam Load (0.2ms)[0m  [1m[34mSELECT  "teams".* FROM "teams" WHERE "teams"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTeam Load (0.2ms)[0m  [1m[34mSELECT  "teams".* FROM "teams" WHERE "teams"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTeam Load (0.2ms)[0m  [1m[34mSELECT  "teams".* FROM "teams" WHERE "teams"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTeam Load (0.2ms)[0m  [1m[34mSELECT  "teams".* FROM "teams" WHERE "teams"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTeam Load (0.1ms)[0m  [1m[34mSELECT  "teams".* FROM "teams" WHERE "teams"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTeam Load (0.1ms)[0m  [1m[34mSELECT  "teams".* FROM "teams" WHERE "teams"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTeam Load (0.1ms)[0m  [1m[34mSELECT  "teams".* FROM "teams" WHERE "teams"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTeam Load (0.1ms)[0m  [1m[34mSELECT  "teams".* FROM "teams" WHERE "teams"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "loans"[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (8.0ms)[0m  [1m[35mCREATE TABLE "loans" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "accepted" boolean DEFAULT 'f', "returned" boolean, "borrower_id" integer, "owner_id" integer, "tool_quantity" integer, "start" date, "end" date, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "tool_id" integer)[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "students"[0m
+  [1m[35m (3.5ms)[0m  [1m[35mCREATE TABLE "students" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "given_name" varchar, "family_name" varchar, "email" varchar, "password" varchar, "password_confirmation" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "password_digest" varchar, "photo" varchar, "admin" boolean DEFAULT 'f', "team_password" varchar, "team_id" integer)[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "teams"[0m
+  [1m[35m (6.3ms)[0m  [1m[35mCREATE TABLE "teams" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "description" text, "photo" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "password" varchar)[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "tools"[0m
+  [1m[35m (5.1ms)[0m  [1m[35mCREATE TABLE "tools" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "description" text, "quantity" integer, "photo" varchar, "team_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (4.7ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (4.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20191203163901)[0m
+  [1m[35m (3.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20191200111000),
+(20191201145425),
+(20191201154200),
+(20191201195148),
+(20191201195308),
+(20191201195811),
+(20191202140329),
+(20191202150717),
+(20191202211539),
+(20191202212252),
+(20191202233000),
+(20191203163301);
+
+[0m
+  [1m[35m (2.9ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.2ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2019-12-03 20:19:01.943165"], ["updated_at", "2019-12-03 20:19:01.943165"]]
+  [1m[35m (2.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.8ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "loans"[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (6.1ms)[0m  [1m[35mCREATE TABLE "loans" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "accepted" boolean DEFAULT 'f', "returned" boolean, "borrower_id" integer, "owner_id" integer, "tool_quantity" integer, "start" date, "end" date, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "tool_id" integer)[0m
+  [1m[35m (0.5ms)[0m  [1m[35mDROP TABLE IF EXISTS "students"[0m
+  [1m[35m (3.7ms)[0m  [1m[35mCREATE TABLE "students" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "given_name" varchar, "family_name" varchar, "email" varchar, "password" varchar, "password_confirmation" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "password_digest" varchar, "photo" varchar, "admin" boolean DEFAULT 'f', "team_password" varchar, "team_id" integer)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "teams"[0m
+  [1m[35m (2.8ms)[0m  [1m[35mCREATE TABLE "teams" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "description" text, "photo" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "password" varchar)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "tools"[0m
+  [1m[35m (3.3ms)[0m  [1m[35mCREATE TABLE "tools" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "description" text, "quantity" integer, "photo" varchar, "team_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (5.2ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (2.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20191203163901)[0m
+  [1m[35m (2.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20191200111000),
+(20191201145425),
+(20191201154200),
+(20191201195148),
+(20191201195308),
+(20191201195811),
+(20191202140329),
+(20191202150717),
+(20191202211539),
+(20191202212252),
+(20191202233000),
+(20191203163301);
+
+[0m
+  [1m[35m (3.2ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (2.1ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2019-12-03 20:19:01.996813"], ["updated_at", "2019-12-03 20:19:01.996813"]]
+  [1m[35m (2.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = ?, "updated_at" = ? WHERE "ar_internal_metadata"."key" = ?[0m  [["value", "test"], ["updated_at", "2019-12-03 20:19:02.003618"], ["key", "environment"]]
+  [1m[35m (2.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35mSQL (4.3ms)[0m  [1m[31mDELETE FROM "teams"[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "teams" ("name", "description", "photo", "created_at", "updated_at", "password") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "AAA"], ["description", "Equipe de exemplo AAA"], ["photo", nil], ["created_at", "2019-12-03 20:19:02.039207"], ["updated_at", "2019-12-03 20:19:02.039207"], ["password", "AAA"]]
+  [1m[35m (1.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "teams" ("name", "description", "photo", "created_at", "updated_at", "password") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "BBB"], ["description", "Equipe de exemplo BBB"], ["photo", nil], ["created_at", "2019-12-03 20:19:02.043487"], ["updated_at", "2019-12-03 20:19:02.043487"], ["password", "BBB"]]
+  [1m[35m (1.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.5ms)[0m  [1m[32mINSERT INTO "teams" ("name", "description", "photo", "created_at", "updated_at", "password") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "CCC"], ["description", "Equipe de exemplo CCC"], ["photo", nil], ["created_at", "2019-12-03 20:19:02.047403"], ["updated_at", "2019-12-03 20:19:02.047403"], ["password", "CCC"]]
+  [1m[35m (2.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTeam Load (0.2ms)[0m  [1m[34mSELECT  "teams".* FROM "teams" WHERE "teams"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (2.1ms)[0m  [1m[32mINSERT INTO "students" ("given_name", "family_name", "email", "created_at", "updated_at", "password_digest", "photo", "admin", "team_password", "team_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["given_name", "111"], ["family_name", "111"], ["email", "111"], ["created_at", "2019-12-03 20:19:02.289873"], ["updated_at", "2019-12-03 20:19:02.289873"], ["password_digest", "$2a$12$c.F4Q86ksKOcofzWGEusdelJLe3gKObyj/JCRMeT5/Qawg2aeGK0C"], ["photo", nil], ["admin", "t"], ["team_password", "AAA"], ["team_id", 1]]
+  [1m[35m (1.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTeam Load (0.1ms)[0m  [1m[34mSELECT  "teams".* FROM "teams" WHERE "teams"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (2.0ms)[0m  [1m[32mINSERT INTO "students" ("given_name", "family_name", "email", "created_at", "updated_at", "password_digest", "photo", "team_password", "team_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["given_name", "222"], ["family_name", "222"], ["email", "222"], ["created_at", "2019-12-03 20:19:02.490264"], ["updated_at", "2019-12-03 20:19:02.490264"], ["password_digest", "$2a$12$FLiXSZUiICMwRvui1qtMx.I2ljaoNUyNX5H2hDGPDQkg.muQrplby"], ["photo", nil], ["team_password", "AAA"], ["team_id", 1]]
+  [1m[35m (2.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTeam Load (0.1ms)[0m  [1m[34mSELECT  "teams".* FROM "teams" WHERE "teams"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "students" ("given_name", "family_name", "email", "created_at", "updated_at", "password_digest", "photo", "admin", "team_password", "team_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["given_name", "333"], ["family_name", "333"], ["email", "333"], ["created_at", "2019-12-03 20:19:02.690028"], ["updated_at", "2019-12-03 20:19:02.690028"], ["password_digest", "$2a$12$G5Ic1jpCne.YyBOF/pqwu.jhQOQWQfuvskcNmaYJIdMYCzvXT3ZMa"], ["photo", nil], ["admin", "t"], ["team_password", "BBB"], ["team_id", 2]]
+  [1m[35m (1.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTeam Load (0.2ms)[0m  [1m[34mSELECT  "teams".* FROM "teams" WHERE "teams"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "students" ("given_name", "family_name", "email", "created_at", "updated_at", "password_digest", "photo", "team_password", "team_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["given_name", "444"], ["family_name", "444"], ["email", "444"], ["created_at", "2019-12-03 20:19:02.887984"], ["updated_at", "2019-12-03 20:19:02.887984"], ["password_digest", "$2a$12$PmEQ9euolQXiqwTsb.3cmuMjAOpAFFB4mQN8TqzAtq5XIkT.Fq.z."], ["photo", nil], ["team_password", "BBB"], ["team_id", 2]]
+  [1m[35m (2.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTeam Load (0.2ms)[0m  [1m[34mSELECT  "teams".* FROM "teams" WHERE "teams"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35mSQL (2.0ms)[0m  [1m[32mINSERT INTO "students" ("given_name", "family_name", "email", "created_at", "updated_at", "password_digest", "photo", "admin", "team_password", "team_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["given_name", "555"], ["family_name", "555"], ["email", "555"], ["created_at", "2019-12-03 20:19:03.091950"], ["updated_at", "2019-12-03 20:19:03.091950"], ["password_digest", "$2a$12$JMzx.oYCuUbyX9thjkw/Ouh4yL/tc.obLM6Y.hg1XTBlhRATUN6Hm"], ["photo", nil], ["admin", "t"], ["team_password", "CCC"], ["team_id", 3]]
+  [1m[35m (1.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTeam Load (0.2ms)[0m  [1m[34mSELECT  "teams".* FROM "teams" WHERE "teams"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "students" ("given_name", "family_name", "email", "created_at", "updated_at", "password_digest", "photo", "team_password", "team_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["given_name", "666"], ["family_name", "666"], ["email", "666"], ["created_at", "2019-12-03 20:19:03.290676"], ["updated_at", "2019-12-03 20:19:03.290676"], ["password_digest", "$2a$12$jtuE0dMbz4wZhupGcZt1FeDdQ6aTRQTBhBU4mUVJE5/NcFi3tgYpG"], ["photo", nil], ["team_password", "CCC"], ["team_id", 3]]
+  [1m[35m (2.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTeam Load (0.2ms)[0m  [1m[34mSELECT  "teams".* FROM "teams" WHERE "teams"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "tools" ("name", "description", "quantity", "photo", "team_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Furadeira"], ["description", "Furadeira de impacto com mandril de 12\""], ["quantity", 3], ["photo", nil], ["team_id", 1], ["created_at", "2019-12-03 20:19:03.310752"], ["updated_at", "2019-12-03 20:19:03.310752"]]
+  [1m[35m (2.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTeam Load (0.3ms)[0m  [1m[34mSELECT  "teams".* FROM "teams" WHERE "teams"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "tools" ("name", "description", "quantity", "photo", "team_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Martelo"], ["description", "Martelo de unha 29mm"], ["quantity", 1], ["photo", nil], ["team_id", 1], ["created_at", "2019-12-03 20:19:03.316446"], ["updated_at", "2019-12-03 20:19:03.316446"]]
+  [1m[35m (1.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTeam Load (0.1ms)[0m  [1m[34mSELECT  "teams".* FROM "teams" WHERE "teams"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "tools" ("name", "description", "quantity", "photo", "team_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Chave de fenda"], ["description", "Chave de fenda 5mm"], ["quantity", 2], ["photo", nil], ["team_id", 2], ["created_at", "2019-12-03 20:19:03.321240"], ["updated_at", "2019-12-03 20:19:03.321240"]]
+  [1m[35m (1.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTeam Load (0.1ms)[0m  [1m[34mSELECT  "teams".* FROM "teams" WHERE "teams"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (1.1ms)[0m  [1m[32mINSERT INTO "tools" ("name", "description", "quantity", "photo", "team_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Serrote"], ["description", "Cabo de madeira"], ["quantity", 2], ["photo", nil], ["team_id", 2], ["created_at", "2019-12-03 20:19:03.325666"], ["updated_at", "2019-12-03 20:19:03.325666"]]
+  [1m[35m (2.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35mSQL (3.1ms)[0m  [1m[31mDELETE FROM "teams"[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "teams" ("name", "description", "photo", "created_at", "updated_at", "password") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "AAA"], ["description", "Equipe de exemplo AAA"], ["photo", nil], ["created_at", "2019-12-03 20:19:27.674546"], ["updated_at", "2019-12-03 20:19:27.674546"], ["password", "AAA"]]
+  [1m[35m (2.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "teams" ("name", "description", "photo", "created_at", "updated_at", "password") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "BBB"], ["description", "Equipe de exemplo BBB"], ["photo", nil], ["created_at", "2019-12-03 20:19:27.678982"], ["updated_at", "2019-12-03 20:19:27.678982"], ["password", "BBB"]]
+  [1m[35m (1.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "teams" ("name", "description", "photo", "created_at", "updated_at", "password") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "CCC"], ["description", "Equipe de exemplo CCC"], ["photo", nil], ["created_at", "2019-12-03 20:19:27.682509"], ["updated_at", "2019-12-03 20:19:27.682509"], ["password", "CCC"]]
+  [1m[35m (1.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTeam Load (0.2ms)[0m  [1m[34mSELECT  "teams".* FROM "teams" WHERE "teams"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTeam Load (0.2ms)[0m  [1m[34mSELECT  "teams".* FROM "teams" WHERE "teams"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTeam Load (0.2ms)[0m  [1m[34mSELECT  "teams".* FROM "teams" WHERE "teams"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTeam Load (0.2ms)[0m  [1m[34mSELECT  "teams".* FROM "teams" WHERE "teams"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTeam Load (0.2ms)[0m  [1m[34mSELECT  "teams".* FROM "teams" WHERE "teams"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTeam Load (0.2ms)[0m  [1m[34mSELECT  "teams".* FROM "teams" WHERE "teams"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTeam Load (0.1ms)[0m  [1m[34mSELECT  "teams".* FROM "teams" WHERE "teams"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTeam Load (0.1ms)[0m  [1m[34mSELECT  "teams".* FROM "teams" WHERE "teams"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTeam Load (0.1ms)[0m  [1m[34mSELECT  "teams".* FROM "teams" WHERE "teams"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTeam Load (0.1ms)[0m  [1m[34mSELECT  "teams".* FROM "teams" WHERE "teams"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTeam Load (0.3ms)[0m  [1m[34mSELECT  "teams".* FROM "teams" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT  "students".* FROM "students" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (6.5ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (3.5ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddTeamIdStudents (20191200111000)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "students" ADD "team_id" integer[0m
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (6.9ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (2.7ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateStudents (20191201145425)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.1ms)[0m  [1m[35mCREATE TABLE "students" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "given_name" varchar, "family_name" varchar, "email" varchar, "password" varchar, "password_confirmation" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20191201145425"]]
+  [1m[35m (2.9ms)[0m  [1m[36mcommit transaction[0m
+Migrating to AddColumnToStudents (20191201154200)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.9ms)[0m  [1m[35mALTER TABLE "students" ADD "password_digest" varchar[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20191201154200"]]
+  [1m[35m (1.8ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateTeams (20191201195148)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE TABLE "teams" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "description" text, "photo" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20191201195148"]]
+  [1m[35m (9.8ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateTools (20191201195308)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE TABLE "tools" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "description" text, "quantity" integer, "photo" varchar, "team_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20191201195308"]]
+  [1m[35m (1.9ms)[0m  [1m[36mcommit transaction[0m
+Migrating to AddPhotoToStudent (20191201195811)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.3ms)[0m  [1m[35mALTER TABLE "students" ADD "photo" varchar[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20191201195811"]]
+  [1m[35m (1.7ms)[0m  [1m[36mcommit transaction[0m
+Migrating to AddAdminToStudents (20191202140329)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.0ms)[0m  [1m[35mALTER TABLE "students" ADD "admin" boolean[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20191202140329"]]
+  [1m[35m (2.1ms)[0m  [1m[36mcommit transaction[0m
+Migrating to AddTeamIdToStudents (20191202150717)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.9ms)[0m  [1m[35mALTER TABLE "students" ADD "team_id" integer[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20191202150717"]]
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateLoans (20191202211539)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE TABLE "loans" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "accepted" boolean DEFAULT 'f', "returned" boolean, "borrower_id" integer, "owner_id" integer, "tool_quantity" integer, "start" date, "end" date, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20191202211539"]]
+  [1m[35m (2.0ms)[0m  [1m[36mcommit transaction[0m
+Migrating to AddToolIdToLoan (20191202212252)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.9ms)[0m  [1m[35mALTER TABLE "loans" ADD "tool_id" integer[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20191202212252"]]
+  [1m[35m (1.7ms)[0m  [1m[36mcommit transaction[0m
+Migrating to AddDefaultToStudents (20191202233000)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TEMPORARY TABLE "astudents" ("id" integer NOT NULL PRIMARY KEY, "given_name" varchar DEFAULT NULL, "family_name" varchar DEFAULT NULL, "email" varchar DEFAULT NULL, "password" varchar DEFAULT NULL, "password_confirmation" varchar DEFAULT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "password_digest" varchar DEFAULT NULL, "photo" varchar DEFAULT NULL, "admin" boolean DEFAULT NULL, "team_id" integer DEFAULT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "astudents" ("id","given_name","family_name","email","password","password_confirmation","created_at","updated_at","password_digest","photo","admin","team_id")
+                     SELECT "id","given_name","family_name","email","password","password_confirmation","created_at","updated_at","password_digest","photo","admin","team_id" FROM "students"[0m
+  [1m[35m (0.8ms)[0m  [1m[35mDROP TABLE "students"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "students" ("id" integer NOT NULL PRIMARY KEY, "given_name" varchar DEFAULT NULL, "family_name" varchar DEFAULT NULL, "email" varchar DEFAULT NULL, "password" varchar DEFAULT NULL, "password_confirmation" varchar DEFAULT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "password_digest" varchar DEFAULT NULL, "photo" varchar DEFAULT NULL, "admin" boolean DEFAULT 'f', "team_id" integer DEFAULT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "students" ("id","given_name","family_name","email","password","password_confirmation","created_at","updated_at","password_digest","photo","admin","team_id")
+                     SELECT "id","given_name","family_name","email","password","password_confirmation","created_at","updated_at","password_digest","photo","admin","team_id" FROM "astudents"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "astudents"[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20191202233000"]]
+  [1m[35m (2.2ms)[0m  [1m[36mcommit transaction[0m
+Migrating to AddPasswordToTeam (20191203163301)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.9ms)[0m  [1m[35mALTER TABLE "teams" ADD "password" varchar[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20191203163301"]]
+  [1m[35m (1.8ms)[0m  [1m[36mcommit transaction[0m
+Migrating to AddTeamPasswordToStudent (20191203163901)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.2ms)[0m  [1m[35mALTER TABLE "students" ADD "team_password" varchar[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20191203163901"]]
+  [1m[35m (2.6ms)[0m  [1m[36mcommit transaction[0m
+Migrating to AddTeamIdStudents (20191205798019)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "students" ADD "team_id" integer[0m
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (2.2ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2019-12-03 20:23:44.850456"], ["updated_at", "2019-12-03 20:23:44.850456"]]
+  [1m[35m (2.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (6.8ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (2.5ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateStudents (20191201145425)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE TABLE "students" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "given_name" varchar, "family_name" varchar, "email" varchar, "password" varchar, "password_confirmation" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20191201145425"]]
+  [1m[35m (2.0ms)[0m  [1m[36mcommit transaction[0m
+Migrating to AddColumnToStudents (20191201154200)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.1ms)[0m  [1m[35mALTER TABLE "students" ADD "password_digest" varchar[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20191201154200"]]
+  [1m[35m (2.2ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateTeams (20191201195148)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE TABLE "teams" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "description" text, "photo" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20191201195148"]]
+  [1m[35m (2.3ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateTools (20191201195308)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE TABLE "tools" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "description" text, "quantity" integer, "photo" varchar, "team_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20191201195308"]]
+  [1m[35m (1.9ms)[0m  [1m[36mcommit transaction[0m
+Migrating to AddPhotoToStudent (20191201195811)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.9ms)[0m  [1m[35mALTER TABLE "students" ADD "photo" varchar[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20191201195811"]]
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+Migrating to AddAdminToStudents (20191202140329)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.8ms)[0m  [1m[35mALTER TABLE "students" ADD "admin" boolean[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20191202140329"]]
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+Migrating to AddTeamIdToStudents (20191202150717)
+  [1m[35m (0.4ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.9ms)[0m  [1m[35mALTER TABLE "students" ADD "team_id" integer[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20191202150717"]]
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateLoans (20191202211539)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.5ms)[0m  [1m[35mCREATE TABLE "loans" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "accepted" boolean DEFAULT 'f', "returned" boolean, "borrower_id" integer, "owner_id" integer, "tool_quantity" integer, "start" date, "end" date, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20191202211539"]]
+  [1m[35m (1.8ms)[0m  [1m[36mcommit transaction[0m
+Migrating to AddToolIdToLoan (20191202212252)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.9ms)[0m  [1m[35mALTER TABLE "loans" ADD "tool_id" integer[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20191202212252"]]
+  [1m[35m (1.7ms)[0m  [1m[36mcommit transaction[0m
+Migrating to AddDefaultToStudents (20191202233000)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TEMPORARY TABLE "astudents" ("id" integer NOT NULL PRIMARY KEY, "given_name" varchar DEFAULT NULL, "family_name" varchar DEFAULT NULL, "email" varchar DEFAULT NULL, "password" varchar DEFAULT NULL, "password_confirmation" varchar DEFAULT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "password_digest" varchar DEFAULT NULL, "photo" varchar DEFAULT NULL, "admin" boolean DEFAULT NULL, "team_id" integer DEFAULT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "astudents" ("id","given_name","family_name","email","password","password_confirmation","created_at","updated_at","password_digest","photo","admin","team_id")
+                     SELECT "id","given_name","family_name","email","password","password_confirmation","created_at","updated_at","password_digest","photo","admin","team_id" FROM "students"[0m
+  [1m[35m (1.0ms)[0m  [1m[35mDROP TABLE "students"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "students" ("id" integer NOT NULL PRIMARY KEY, "given_name" varchar DEFAULT NULL, "family_name" varchar DEFAULT NULL, "email" varchar DEFAULT NULL, "password" varchar DEFAULT NULL, "password_confirmation" varchar DEFAULT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "password_digest" varchar DEFAULT NULL, "photo" varchar DEFAULT NULL, "admin" boolean DEFAULT 'f', "team_id" integer DEFAULT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "students" ("id","given_name","family_name","email","password","password_confirmation","created_at","updated_at","password_digest","photo","admin","team_id")
+                     SELECT "id","given_name","family_name","email","password","password_confirmation","created_at","updated_at","password_digest","photo","admin","team_id" FROM "astudents"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "astudents"[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20191202233000"]]
+  [1m[35m (1.9ms)[0m  [1m[36mcommit transaction[0m
+Migrating to AddPasswordToTeam (20191203163301)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.9ms)[0m  [1m[35mALTER TABLE "teams" ADD "password" varchar[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20191203163301"]]
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+Migrating to AddTeamPasswordToStudent (20191203163901)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.8ms)[0m  [1m[35mALTER TABLE "students" ADD "team_password" varchar[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20191203163901"]]
+  [1m[35m (1.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.5ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2019-12-03 20:23:53.469216"], ["updated_at", "2019-12-03 20:23:53.469216"]]
+  [1m[35m (2.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTeam Load (0.3ms)[0m  [1m[34mSELECT  "teams".* FROM "teams" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "loans"[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (6.7ms)[0m  [1m[35mCREATE TABLE "loans" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "accepted" boolean DEFAULT 'f', "returned" boolean, "borrower_id" integer, "owner_id" integer, "tool_quantity" integer, "start" date, "end" date, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "tool_id" integer)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "students"[0m
+  [1m[35m (3.0ms)[0m  [1m[35mCREATE TABLE "students" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "given_name" varchar, "family_name" varchar, "email" varchar, "password" varchar, "password_confirmation" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "password_digest" varchar, "photo" varchar, "admin" boolean DEFAULT 'f', "team_id" integer, "team_password" varchar)[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "teams"[0m
+  [1m[35m (3.4ms)[0m  [1m[35mCREATE TABLE "teams" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "description" text, "photo" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "password" varchar)[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "tools"[0m
+  [1m[35m (2.5ms)[0m  [1m[35mCREATE TABLE "tools" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "description" text, "quantity" integer, "photo" varchar, "team_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (2.4ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (2.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20191203163901)[0m
+  [1m[35m (2.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20191201145425),
+(20191201154200),
+(20191201195148),
+(20191201195308),
+(20191201195811),
+(20191202140329),
+(20191202150717),
+(20191202211539),
+(20191202212252),
+(20191202233000),
+(20191203163301);
+
+[0m
+  [1m[35m (2.8ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2019-12-03 20:24:52.829516"], ["updated_at", "2019-12-03 20:24:52.829516"]]
+  [1m[35m (1.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "loans"[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (6.0ms)[0m  [1m[35mCREATE TABLE "loans" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "accepted" boolean DEFAULT 'f', "returned" boolean, "borrower_id" integer, "owner_id" integer, "tool_quantity" integer, "start" date, "end" date, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "tool_id" integer)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "students"[0m
+  [1m[35m (2.6ms)[0m  [1m[35mCREATE TABLE "students" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "given_name" varchar, "family_name" varchar, "email" varchar, "password" varchar, "password_confirmation" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "password_digest" varchar, "photo" varchar, "admin" boolean DEFAULT 'f', "team_id" integer, "team_password" varchar)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "teams"[0m
+  [1m[35m (2.3ms)[0m  [1m[35mCREATE TABLE "teams" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "description" text, "photo" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "password" varchar)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "tools"[0m
+  [1m[35m (2.4ms)[0m  [1m[35mCREATE TABLE "tools" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "description" text, "quantity" integer, "photo" varchar, "team_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (2.6ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (2.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20191203163901)[0m
+  [1m[35m (2.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20191201145425),
+(20191201154200),
+(20191201195148),
+(20191201195308),
+(20191201195811),
+(20191202140329),
+(20191202150717),
+(20191202211539),
+(20191202212252),
+(20191202233000),
+(20191203163301);
+
+[0m
+  [1m[35m (2.1ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2019-12-03 20:24:52.869829"], ["updated_at", "2019-12-03 20:24:52.869829"]]
+  [1m[35m (1.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = ?, "updated_at" = ? WHERE "ar_internal_metadata"."key" = ?[0m  [["value", "test"], ["updated_at", "2019-12-03 20:24:52.873794"], ["key", "environment"]]
+  [1m[35m (1.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35mSQL (3.4ms)[0m  [1m[31mDELETE FROM "teams"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "teams" ("name", "description", "photo", "created_at", "updated_at", "password") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "AAA"], ["description", "Equipe de exemplo AAA"], ["photo", nil], ["created_at", "2019-12-03 20:24:52.905449"], ["updated_at", "2019-12-03 20:24:52.905449"], ["password", "AAA"]]
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "teams" ("name", "description", "photo", "created_at", "updated_at", "password") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "BBB"], ["description", "Equipe de exemplo BBB"], ["photo", nil], ["created_at", "2019-12-03 20:24:52.909316"], ["updated_at", "2019-12-03 20:24:52.909316"], ["password", "BBB"]]
+  [1m[35m (2.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.1ms)[0m  [1m[32mINSERT INTO "teams" ("name", "description", "photo", "created_at", "updated_at", "password") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "CCC"], ["description", "Equipe de exemplo CCC"], ["photo", nil], ["created_at", "2019-12-03 20:24:52.913542"], ["updated_at", "2019-12-03 20:24:52.913542"], ["password", "CCC"]]
+  [1m[35m (2.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTeam Load (0.3ms)[0m  [1m[34mSELECT  "teams".* FROM "teams" ORDER BY "teams"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTeam Load (0.2ms)[0m  [1m[34mSELECT  "teams".* FROM "teams" WHERE "teams"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (2.0ms)[0m  [1m[32mINSERT INTO "students" ("given_name", "family_name", "email", "created_at", "updated_at", "password_digest", "photo", "admin", "team_id", "team_password") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["given_name", "111"], ["family_name", "111"], ["email", "111"], ["created_at", "2019-12-03 20:24:53.150262"], ["updated_at", "2019-12-03 20:24:53.150262"], ["password_digest", "$2a$12$tK0HIjPC1/goWa2MySJdP.jEd/yjA1beiTgXpYBX6Re1HOV6HVOja"], ["photo", nil], ["admin", "t"], ["team_id", 1], ["team_password", "AAA"]]
+  [1m[35m (1.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTeam Load (0.1ms)[0m  [1m[34mSELECT  "teams".* FROM "teams" ORDER BY "teams"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTeam Load (0.1ms)[0m  [1m[34mSELECT  "teams".* FROM "teams" WHERE "teams"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "students" ("given_name", "family_name", "email", "created_at", "updated_at", "password_digest", "photo", "team_id", "team_password") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["given_name", "222"], ["family_name", "222"], ["email", "222"], ["created_at", "2019-12-03 20:24:53.350604"], ["updated_at", "2019-12-03 20:24:53.350604"], ["password_digest", "$2a$12$8.fWVIQ8cVP2P7yTwS6kiOGlyKnBcdXNw9DFXBKE603oP3lBS1HJe"], ["photo", nil], ["team_id", 1], ["team_password", "AAA"]]
+  [1m[35m (1.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTeam Load (0.2ms)[0m  [1m[34mSELECT  "teams".* FROM "teams" ORDER BY "teams"."id" ASC LIMIT ? OFFSET ?[0m  [["LIMIT", 1], ["OFFSET", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTeam Load (0.2ms)[0m  [1m[34mSELECT  "teams".* FROM "teams" WHERE "teams"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "students" ("given_name", "family_name", "email", "created_at", "updated_at", "password_digest", "photo", "admin", "team_id", "team_password") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["given_name", "333"], ["family_name", "333"], ["email", "333"], ["created_at", "2019-12-03 20:24:53.546919"], ["updated_at", "2019-12-03 20:24:53.546919"], ["password_digest", "$2a$12$lMZduN334EMM27JLakPffOaSJPZIORRY5fb5UwXVTr2gXQFgdaxdu"], ["photo", nil], ["admin", "t"], ["team_id", 2], ["team_password", "BBB"]]
+  [1m[35m (1.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTeam Load (0.1ms)[0m  [1m[34mSELECT  "teams".* FROM "teams" ORDER BY "teams"."id" ASC LIMIT ? OFFSET ?[0m  [["LIMIT", 1], ["OFFSET", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTeam Load (0.1ms)[0m  [1m[34mSELECT  "teams".* FROM "teams" WHERE "teams"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (1.9ms)[0m  [1m[32mINSERT INTO "students" ("given_name", "family_name", "email", "created_at", "updated_at", "password_digest", "photo", "team_id", "team_password") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["given_name", "444"], ["family_name", "444"], ["email", "444"], ["created_at", "2019-12-03 20:24:53.743183"], ["updated_at", "2019-12-03 20:24:53.743183"], ["password_digest", "$2a$12$OzIdiWZzn/0TXqD.ewOHCuApMVlWPD.lkwqRNaUhiWH8lY7u1vACG"], ["photo", nil], ["team_id", 2], ["team_password", "BBB"]]
+  [1m[35m (2.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTeam Load (0.1ms)[0m  [1m[34mSELECT  "teams".* FROM "teams" ORDER BY "teams"."id" ASC LIMIT ? OFFSET ?[0m  [["LIMIT", 1], ["OFFSET", 2]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTeam Load (0.2ms)[0m  [1m[34mSELECT  "teams".* FROM "teams" WHERE "teams"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "students" ("given_name", "family_name", "email", "created_at", "updated_at", "password_digest", "photo", "admin", "team_id", "team_password") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["given_name", "555"], ["family_name", "555"], ["email", "555"], ["created_at", "2019-12-03 20:24:53.945853"], ["updated_at", "2019-12-03 20:24:53.945853"], ["password_digest", "$2a$12$2v8jpkjc2sNzcU.un2OOhuh8HrW8DIATqrK1aBK4zuyrUSaxKEEtO"], ["photo", nil], ["admin", "t"], ["team_id", 3], ["team_password", "CCC"]]
+  [1m[35m (1.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTeam Load (0.1ms)[0m  [1m[34mSELECT  "teams".* FROM "teams" ORDER BY "teams"."id" ASC LIMIT ? OFFSET ?[0m  [["LIMIT", 1], ["OFFSET", 2]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTeam Load (0.1ms)[0m  [1m[34mSELECT  "teams".* FROM "teams" WHERE "teams"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35mSQL (2.0ms)[0m  [1m[32mINSERT INTO "students" ("given_name", "family_name", "email", "created_at", "updated_at", "password_digest", "photo", "team_id", "team_password") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["given_name", "666"], ["family_name", "666"], ["email", "666"], ["created_at", "2019-12-03 20:24:54.144164"], ["updated_at", "2019-12-03 20:24:54.144164"], ["password_digest", "$2a$12$YPQzkpm9uwTbS2GITqBOU.Gf8a/Du0REqoUXxyiOM/gC5WJdyWhiW"], ["photo", nil], ["team_id", 3], ["team_password", "CCC"]]
+  [1m[35m (1.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTeam Load (0.2ms)[0m  [1m[34mSELECT  "teams".* FROM "teams" ORDER BY "teams"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTeam Load (0.2ms)[0m  [1m[34mSELECT  "teams".* FROM "teams" WHERE "teams"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "tools" ("name", "description", "quantity", "photo", "team_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Furadeira"], ["description", "Furadeira de impacto com mandril de 12\""], ["quantity", 3], ["photo", nil], ["team_id", 1], ["created_at", "2019-12-03 20:24:54.162449"], ["updated_at", "2019-12-03 20:24:54.162449"]]
+  [1m[35m (2.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTeam Load (0.1ms)[0m  [1m[34mSELECT  "teams".* FROM "teams" ORDER BY "teams"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTeam Load (0.1ms)[0m  [1m[34mSELECT  "teams".* FROM "teams" WHERE "teams"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "tools" ("name", "description", "quantity", "photo", "team_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Martelo"], ["description", "Martelo de unha 29mm"], ["quantity", 1], ["photo", nil], ["team_id", 1], ["created_at", "2019-12-03 20:24:54.167478"], ["updated_at", "2019-12-03 20:24:54.167478"]]
+  [1m[35m (1.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTeam Load (0.1ms)[0m  [1m[34mSELECT  "teams".* FROM "teams" ORDER BY "teams"."id" ASC LIMIT ? OFFSET ?[0m  [["LIMIT", 1], ["OFFSET", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTeam Load (0.1ms)[0m  [1m[34mSELECT  "teams".* FROM "teams" WHERE "teams"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "tools" ("name", "description", "quantity", "photo", "team_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Chave de fenda"], ["description", "Chave de fenda 5mm"], ["quantity", 2], ["photo", nil], ["team_id", 2], ["created_at", "2019-12-03 20:24:54.172151"], ["updated_at", "2019-12-03 20:24:54.172151"]]
+  [1m[35m (2.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTeam Load (0.1ms)[0m  [1m[34mSELECT  "teams".* FROM "teams" ORDER BY "teams"."id" ASC LIMIT ? OFFSET ?[0m  [["LIMIT", 1], ["OFFSET", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTeam Load (0.1ms)[0m  [1m[34mSELECT  "teams".* FROM "teams" WHERE "teams"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "tools" ("name", "description", "quantity", "photo", "team_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Serrote"], ["description", "Cabo de madeira"], ["quantity", 2], ["photo", nil], ["team_id", 2], ["created_at", "2019-12-03 20:24:54.177072"], ["updated_at", "2019-12-03 20:24:54.177072"]]
+  [1m[35m (2.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTeam Load (3.0ms)[0m  [1m[34mSELECT  "teams".* FROM "teams" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT  "students".* FROM "students" LIMIT ?[0m  [["LIMIT", 11]]
+Started GET "/" for ::1 at 2019-12-03 17:26:02 -0300
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by WelcomeController#entrance as HTML
+  Rendering welcome/entrance.html.erb within layouts/application
+  Rendered welcome/entrance.html.erb within layouts/application (1.8ms)
+  Rendered application/_navigation.html.erb (1.2ms)
+Completed 200 OK in 705ms (Views: 698.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/students/new" for ::1 at 2019-12-03 17:26:06 -0300
+Processing by StudentsController#new as HTML
+  Rendering students/new.html.erb within layouts/application
+  [1m[36mTeam Load (0.2ms)[0m  [1m[34mSELECT "teams".* FROM "teams"[0m
+  Rendered students/_form.html.erb (53.1ms)
+  Rendered students/new.html.erb within layouts/application (57.6ms)
+  Rendered application/_navigation.html.erb (0.6ms)
+Completed 200 OK in 164ms (Views: 133.8ms | ActiveRecord: 1.6ms)
+
+
+Started POST "/students" for ::1 at 2019-12-03 17:26:21 -0300
+Processing by StudentsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"CMXwTM076vrv7YcGIIyuX6x5mLNGgggegYp16kbFTnzpbzkC3m5NJa0nwjURPumkvBHzMxMYABHTlvITA0ZsBw==", "student"=>{"given_name"=>"teste", "family_name"=>"gasgas", "email"=>"fasdfas", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "team_id"=>"1", "team_password"=>"[FILTERED]", "photo"=>#<ActionDispatch::Http::UploadedFile:0x00007fde38b42af8 @tempfile=#<Tempfile:/tmp/RackMultipart20191203-2944-1ig8pro.jpg>, @original_filename="cat-rabbit.jpg", @content_type="image/png", @headers="Content-Disposition: form-data; name=\"student[photo]\"; filename=\"C:\\Users\\tutu_\\Desktop\\cat-rabbit.jpg\"\r\nContent-Type: image/png\r\n">}, "commit"=>"Create Student"}
+  [1m[36mTeam Load (0.2ms)[0m  [1m[34mSELECT  "teams".* FROM "teams" WHERE "teams"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCACHE Team Load (0.0ms)[0m  [1m[34mSELECT  "teams".* FROM "teams" WHERE "teams"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (2.6ms)[0m  [1m[32mINSERT INTO "students" ("given_name", "family_name", "email", "created_at", "updated_at", "password_digest", "photo", "team_id", "team_password") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["given_name", "teste"], ["family_name", "gasgas"], ["email", "fasdfas"], ["created_at", "2019-12-03 20:26:21.268493"], ["updated_at", "2019-12-03 20:26:21.268493"], ["password_digest", "$2a$12$d/qA7Bnf/gGT/GtoxAhdp.fPy.E8r6aXsNmJoZ3wAT.0IKUAW35I2"], ["photo", "cat-rabbit.jpg"], ["team_id", 1], ["team_password", "AAA"]]
+  [1m[35m (2.6ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/students/7
+Completed 302 Found in 249ms (ActiveRecord: 5.5ms)
+
+
+Started GET "/students/7" for ::1 at 2019-12-03 17:26:21 -0300
+Processing by StudentsController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mStudent Load (0.4ms)[0m  [1m[34mSELECT  "students".* FROM "students" WHERE "students"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mTeam Load (0.2ms)[0m  [1m[34mSELECT  "teams".* FROM "teams" WHERE "teams"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering students/show.html.erb within layouts/application
+  [1m[36mCACHE Team Load (0.0ms)[0m  [1m[34mSELECT  "teams".* FROM "teams" WHERE "teams"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mLoan Load (0.3ms)[0m  [1m[34mSELECT "loans".* FROM "loans" INNER JOIN "tools" ON "loans"."tool_id" = "tools"."id" WHERE "tools"."team_id" = ? AND "loans"."accepted" = ?[0m  [["team_id", 1], ["accepted", "f"]]
+  Rendered students/_loans.html.erb (14.2ms)
+  [1m[36mLoan Load (0.2ms)[0m  [1m[34mSELECT "loans".* FROM "loans" WHERE "loans"."borrower_id" = ?[0m  [["borrower_id", 7]]
+  Rendered students/_loans.html.erb (0.9ms)
+  [1m[36mLoan Load (0.2ms)[0m  [1m[34mSELECT "loans".* FROM "loans" WHERE "loans"."owner_id" = ? AND "loans"."returned" IS NULL[0m  [["owner_id", 7]]
+  Rendered students/_loans.html.erb (1.2ms)
+  [1m[36mLoan Load (0.3ms)[0m  [1m[34mSELECT "loans".* FROM "loans" INNER JOIN "tools" ON "loans"."tool_id" = "tools"."id" WHERE "tools"."team_id" = ? AND ("loans"."returned" IS NOT NULL)[0m  [["team_id", 1]]
+  Rendered students/_loans.html.erb (1.2ms)
+  Rendered students/show.html.erb within layouts/application (36.7ms)
+  [1m[36mStudent Load (0.1ms)[0m  [1m[34mSELECT  "students".* FROM "students" WHERE "students"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  Rendered application/_navigation.html.erb (2.3ms)
+Completed 200 OK in 156ms (Views: 106.4ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/students" for ::1 at 2019-12-03 17:26:23 -0300
+Processing by StudentsController#index as HTML
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT  "students".* FROM "students" WHERE "students"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  Rendering students/index.html.erb within layouts/application
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT "students".* FROM "students"[0m
+  Rendered students/index.html.erb within layouts/application (7.2ms)
+Completed 500 Internal Server Error in 24ms (ActiveRecord: 0.4ms)
+
+
+  
+ActionView::Template::Error (nil is not a valid asset source):
+    25:   <tbody>
+    26:     <% @students.each do |student| %>
+    27:       <tr>
+    28:         <td><%= image_tag(student.photo_url) %></td>
+    29:         <td><%= student.name %></td>
+    30:         <td><%= student.email %></td>
+    31:         <td><%= link_to student.team.name, team_path(student.team_id) %></td>
+  
+app/views/students/index.html.erb:28:in `block in _app_views_students_index_html_erb___3902685491485200833_70296214692960'
+app/views/students/index.html.erb:26:in `_app_views_students_index_html_erb___3902685491485200833_70296214692960'
