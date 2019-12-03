@@ -46,13 +46,21 @@ class LoansController < ApplicationController
   def update
     respond_to do |format|
       if @loan.update(loan_params)
-        format.html { redirect_to @loan, notice: 'Loan was successfully updated.' }
+        if @loan.borrower_id = session[:student_id]
+          format.html { redirect_to Student.find(@loan.borrower_id), notice: 'Loan was successfully updated.' }
+        else
+          format.html { redirect_to Student.find(@loan.owner_id), notice: 'Loan was successfully updated.' }
+        end
         format.json { render :show, status: :ok, location: @loan }
       else
         format.html { render :edit }
         format.json { render json: @loan.errors, status: :unprocessable_entity }
       end
     end
+  end
+
+  def approve
+    @loan.update(accepted: true)
   end
 
   # DELETE /loans/1
@@ -77,6 +85,6 @@ class LoansController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def loan_params
-      params.require(:loan).permit(:accepted, :returned, :borrower_id, :owner_id, :tool_quantity, :start, :end)
+      params.permit(:accepted, :returned, :borrower_id, :owner_id, :tool_quantity, :start, :end)
     end
 end
