@@ -1,7 +1,7 @@
 class CreateLoans < ActiveRecord::Migration[5.1]
   def change
     create_table :loans do |t|
-      t.boolean :accepted
+      t.boolean :accepted, :default => false
       t.boolean :returned
       t.integer :borrower_id
       t.integer :owner_id

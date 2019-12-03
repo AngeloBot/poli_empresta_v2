@@ -30,7 +30,6 @@
     Membro
   <% end %>
 </p>
-
 <table>
   <thead>
     <tr>
@@ -58,13 +57,19 @@
         <td><%= loan.start %></td>
         <td><%= loan.end %></td>
         <td><%= link_to 'Show', [@tool,loan] %></td>
-        <td><%= link_to 'Edit', edit_tool_loan_path(@tool,loan) %></td>
-        <td><%= link_to 'Destroy', [@tool,loan], method: :delete, data: { confirm: 'Are you sure?' } %></td>
-        <td><%= link_to "some text", tool_loan_path(@tool, loan, :accepted => true), method: :put %></td>
+        <% if true %>
+          <td><%= link_to 'Edit', edit_tool_loan_path(@tool,loan) %></td>
+          <td><%= link_to 'Recusar', [@tool,loan], method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          <td><%= link_to 'Aceitar', tool_loan_path(@tool, loan, :accepted => true, :start => Date.today), method: :put %></td>
+        <% end %>
       </tr>
     <% end %>
   </tbody>
 </table>
+
+<%= render partial: 'loans', locals: {loans: @pending_loans, pending: true} %>
+<%= render partial: 'loans', locals: {loans: @pending_loans, pending: false} %>
+<%= render partial: 'loans', locals: {loans: @pending_loans, pending: false} %>
 
 <%= link_to 'Edit', edit_student_path(@student) %> |
 <%= link_to 'Back', students_path %>

@@ -22,7 +22,7 @@
       <td><%= tool.name %></td>
       <td><%= tool.quantity %></td>
       <td><%= link_to 'Show', tool %></td>
-        <% if edit %>
+      <% if edit %>
         <td><%= link_to 'Edit', edit_tool_path(tool) %></td>
         <td><%= link_to 'Destroy', tool, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       <% end %>
