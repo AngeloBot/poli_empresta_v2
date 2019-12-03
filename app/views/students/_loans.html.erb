@@ -28,9 +28,11 @@
         <% if pending %>
           <td><%= link_to 'Edit', edit_tool_loan_path(@tool,loan) %></td>
           <td><%= link_to 'Recusar', [@tool,loan], method: :delete, data: { confirm: 'Are you sure?' } %></td>
-          <td><%= link_to 'Aceitar', tool_loan_path(@tool, loan, :accepted => true, :start => Date.today, :loan => loan), method: :put %></td>
+          <td><%= link_to 'Aceitar', tool_loan_path(@tool, loan, :accepted => true, :start => Date.today, :owner_id => student.id), method: :put %></td>
         <% end %>
       </tr>
     <% end %>
   </tbody>
 </table>
+
+</br>

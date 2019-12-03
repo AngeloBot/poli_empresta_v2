@@ -17,11 +17,23 @@
   <%= @tool.quantity %>
 </p>
 
+
+<p>
+  <strong>Disponível?</strong>
+  <% if Tool.available?(@tool) %>
+  Sim
+  <% else %>
+  Não
+  <% end %>
+</p>
+
 <p>
   <strong>Team:</strong>
   <%= @tool.team.name %>
 </p>
 
-<%= link_to 'Pegar Emprestado', new_tool_loan_path(@tool) %> |
+<% if Tool.available?(@tool) %>
+  <%= link_to 'Pegar Emprestado', new_tool_loan_path(@tool) %> |
+<% end %>
 <%= link_to 'Edit', edit_tool_path(@tool) %> |
 <%= link_to 'Back', tools_path %>
