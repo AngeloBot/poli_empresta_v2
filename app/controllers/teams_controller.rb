@@ -20,14 +20,6 @@ class TeamsController < ApplicationController
     @student= Student.find(session[:student_id])
   end
 
-  def profile
-
-    @student= Student.find(session[:student_id])
-    @team_profile= Team.find(@student.team_id)
-    @team=@team_profile
-
-  end
-
   # GET /teams/new
   def new
     @team = Team.new
@@ -63,7 +55,8 @@ class TeamsController < ApplicationController
   def update
     respond_to do |format|
       if @team.update(team_params)
-        format.html { redirect_to team_profile_path, notice: 'Team was successfully updated.' }
+        @student=Student.find(session[:student_id])
+        format.html { redirect_to team_path(@student.team_id), notice: 'Team was successfully updated.' }
         format.json { render :show, status: :ok, location: @team }
       else
         format.html { render :edit }
