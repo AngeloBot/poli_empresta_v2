@@ -18,13 +18,9 @@
 </p>
 
 <p>
-  <strong>Password:</strong>
-  <%= @student.password %>
-</p>
-
-<p>
-  <strong>Password confirmation:</strong>
-  <%= @student.password_confirmation %>
+  <strong>Team:</strong>
+  <%#= @student.team.name %>
+  <%= link_to @student.team.name, team_path(@student.team_id) %>
 </p>
 
 <%= link_to 'Edit', edit_student_path(@student) %> |

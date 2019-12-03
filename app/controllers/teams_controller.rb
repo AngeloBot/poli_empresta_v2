@@ -10,6 +10,7 @@ class TeamsController < ApplicationController
   # GET /teams/1
   # GET /teams/1.json
   def show
+    @student= Student.find(session[:student_id])
   end
 
   # GET /teams/new

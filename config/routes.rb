@@ -1,10 +1,13 @@
 Rails.application.routes.draw do
   resources :tools
-  resources :teams
-  #get 'sessions/new'
-  get 'signup', to: 'students#_form', as: 'signup'
-  get 'login', to: 'sessions#new', as: 'login'
+  resources :teams do
+    resources :students
+    #resources :tools
+  end
+
+  get 'signup', to: 'students#new', as: 'signup'
   get 'logout', to: 'sessions#destroy', as: 'logout'
+  get 'home', to:  'welcome#home', as: 'home'
 
   resources :students
   resources :sessions

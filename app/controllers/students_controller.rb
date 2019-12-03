@@ -25,6 +25,12 @@ class StudentsController < ApplicationController
   # POST /students.json
   def create
     @student = Student.new(student_params)
+    
+    if session[:created_team]
+      @student.team_id = session[:team]
+      @student.admin = true
+      session[:admin_pendente]=false
+    end
 
     respond_to do |format|
       if @student.save
