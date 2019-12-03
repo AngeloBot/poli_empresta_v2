@@ -15,7 +15,7 @@ class StudentsController < ApplicationController
     @pending_loans = @team_loans.where(accepted: false)
     @student_asked_loans = Loan.where(borrower_id: @student.id)
     @student_approved_loans = Loan.where(owner_id: @student.id).where(returned: nil)
-    @finished_loans = @team_loans.where(returned: true) + @team_loans.where(returned: false)
+    @finished_loans = @team_loans.where.not(returned: nil)
   end
 
   # GET /students/new
