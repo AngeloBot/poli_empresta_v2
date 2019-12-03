@@ -19,8 +19,7 @@
 
 <p>
   <strong>Team:</strong>
-  <%#= @student.team.name %>
-  <%= link_to @student.team.name, team_profile_path %>
+  <<%= link_to @student.team.name, team_path(@student.team_id) %>
 </p>
 
 <p>
@@ -30,6 +29,7 @@
   <% else %>
     Membro
   <% end %>
+  
 </p>
 
 <% if session[:student_id]==@student.id%>

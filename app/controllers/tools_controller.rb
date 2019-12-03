@@ -24,12 +24,17 @@ class ToolsController < ApplicationController
   # POST /tools
   # POST /tools.json
   def create
+    
     @tool = Tool.new(tool_params)
+    @student = Student.find(session[:student_id])
+    @tool.team_id= @student.team_id
 
     respond_to do |format|
       if @tool.save
+        
         format.html { redirect_to @tool, notice: 'Tool was successfully created.' }
         format.json { render :show, status: :created, location: @tool }
+        
       else
         format.html { render :new }
         format.json { render json: @tool.errors, status: :unprocessable_entity }
@@ -69,6 +74,6 @@ class ToolsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def tool_params
-      params.require(:tool).permit(:name, :description, :quantity, :photo, :team_id)
+      params.require(:tool).permit(:name, :description, :quantity, :photo)
     end
 end

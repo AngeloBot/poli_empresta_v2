@@ -28,6 +28,7 @@ class StudentsController < ApplicationController
   def create
 
     @student = Student.new(student_params)
+    
     if session[:created_team]
       @student.team_id = session[:team]
       @student.admin = true
