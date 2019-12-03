@@ -30,6 +30,14 @@
           <td><%= link_to 'Recusar', [@tool,loan], method: :delete, data: { confirm: 'Are you sure?' } %></td>
           <td><%= link_to 'Aceitar', tool_loan_path(@tool, loan, :accepted => true, :start => Date.today, :owner_id => student.id), method: :put %></td>
         <% end %>
+        <% if approved %>
+          <td><%= link_to 'Devolvida', tool_loan_path(@tool, loan, :returned => true), method: :put %></td>
+          <td><%= link_to 'Não devolvida', tool_loan_path(@tool, loan, :returned => false), method: :put %></td>
+        <% end %>
+        <% if rate %>
+          <td><%#=AVALIAR MEMBRO link_to 'Devolvida', tool_loan_path(@tool, loan, :returned => true), method: :put %></td>
+        <% end %>
+
       </tr>
     <% end %>
   </tbody>
