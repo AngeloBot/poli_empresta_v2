@@ -3549,3 +3549,96 @@ Processing by TeamsController#index as HTML
 Completed 200 OK in 80ms (Views: 65.9ms | ActiveRecord: 1.6ms)
 
 
+Started GET "/" for ::1 at 2019-12-03 12:42:51 -0200
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by WelcomeController#entrance as HTML
+  Rendering welcome/entrance.html.erb within layouts/application
+  Rendered welcome/entrance.html.erb within layouts/application (2.2ms)
+  Rendered application/_navigation.html.erb (0.6ms)
+Completed 200 OK in 513ms (Views: 505.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/sessions/new" for ::1 at 2019-12-03 12:42:54 -0200
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (1.1ms)
+  Rendered application/_navigation.html.erb (0.6ms)
+Completed 200 OK in 86ms (Views: 80.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/sessions" for ::1 at 2019-12-03 12:42:58 -0200
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"dD1wJZNyF7D2y0ioS1QKCJMuIADxESE2RlzPet1CCg1RQAnaI8xUQKSIQzZ57Ls6wSDXaxz5ZKTPa0H6sVw2Zw==", "email"=>"111", "password"=>"[FILTERED]", "commit"=>"Log In"}
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT  "students".* FROM "students" WHERE "students"."email" = ? LIMIT ?[0m  [["email", "111"], ["LIMIT", 1]]
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (1.0ms)
+  Rendered application/_navigation.html.erb (0.6ms)
+Completed 200 OK in 103ms (Views: 75.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/teams/new" for ::1 at 2019-12-03 12:43:02 -0200
+Processing by TeamsController#new as HTML
+  Rendering teams/new.html.erb within layouts/application
+  Rendered teams/_form.html.erb (21.3ms)
+  Rendered teams/new.html.erb within layouts/application (27.6ms)
+  Rendered application/_navigation.html.erb (0.6ms)
+Completed 200 OK in 127ms (Views: 102.0ms | ActiveRecord: 0.9ms)
+
+
+Started POST "/teams" for ::1 at 2019-12-03 12:43:09 -0200
+Processing by TeamsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"NPVJw7okz8e6UjhfyOZV7K55cYMbv9CUL4k6SBK0VZ3Y5wUG4uEri0xFfmnUOn/sIkXttlCzs05VeSm+w500nQ==", "team"=>{"name"=>"AAA", "description"=>"AAA", "photo"=>#<ActionDispatch::Http::UploadedFile:0x00007f91611226c8 @tempfile=#<Tempfile:/tmp/RackMultipart20191203-330-aa1k65.jpg>, @original_filename="11083450 - Copia - Copia.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"team[photo]\"; filename=\"11083450 - Copia - Copia.jpg\"\r\nContent-Type: image/jpeg\r\n">}, "commit"=>"Create Team"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (20.7ms)[0m  [1m[32mINSERT INTO "teams" ("name", "description", "photo", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "AAA"], ["description", "AAA"], ["photo", "11083450_-_Copia_-_Copia.jpg"], ["created_at", "2019-12-03 14:43:09.054619"], ["updated_at", "2019-12-03 14:43:09.054619"]]
+  [1m[35m (112.3ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/students/new
+Completed 302 Found in 163ms (ActiveRecord: 133.2ms)
+
+
+Started GET "/students/new" for ::1 at 2019-12-03 12:43:09 -0200
+Processing by StudentsController#new as HTML
+  Rendering students/new.html.erb within layouts/application
+  Rendered students/_form.html.erb (3.5ms)
+  Rendered students/new.html.erb within layouts/application (9.5ms)
+  Rendered application/_navigation.html.erb (1.3ms)
+Completed 200 OK in 106ms (Views: 90.0ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/students" for ::1 at 2019-12-03 12:43:18 -0200
+Processing by StudentsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"R/v3ZzcgVNdFh1EAr3hYUQh7y7R89TjR9o20zFREUSe6s9M3z03W9gfd64AirHjXw9/1j3F4o98VU7RYSvzNbQ==", "student"=>{"given_name"=>"111", "family_name"=>"111", "email"=>"111", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "photo"=>#<ActionDispatch::Http::UploadedFile:0x00007f91640a0f58 @tempfile=#<Tempfile:/tmp/RackMultipart20191203-330-coojh.png>, @original_filename="indice - Copia - Copia.png", @content_type="image/png", @headers="Content-Disposition: form-data; name=\"student[photo]\"; filename=\"indice - Copia - Copia.png\"\r\nContent-Type: image/png\r\n">}, "commit"=>"Create Student"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTeam Load (0.3ms)[0m  [1m[34mSELECT  "teams".* FROM "teams" WHERE "teams"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (1.1ms)[0m  [1m[32mINSERT INTO "students" ("given_name", "family_name", "email", "created_at", "updated_at", "password_digest", "photo", "admin", "team_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["given_name", "111"], ["family_name", "111"], ["email", "111"], ["created_at", "2019-12-03 14:43:18.415035"], ["updated_at", "2019-12-03 14:43:18.415035"], ["password_digest", "$2a$12$07KgSUXNAHfl2YopeyiDLONJuA4LGFWgf92rC/awn.iW1IGWwFBz6"], ["photo", "indice_-_Copia_-_Copia.png"], ["admin", "t"], ["team_id", "2"]]
+  [1m[35m (2.3ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/students/3
+Completed 302 Found in 275ms (ActiveRecord: 3.8ms)
+
+
+Started GET "/students/3" for ::1 at 2019-12-03 12:43:18 -0200
+Processing by StudentsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mStudent Load (0.3ms)[0m  [1m[34mSELECT  "students".* FROM "students" WHERE "students"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering students/show.html.erb within layouts/application
+  [1m[36mTeam Load (0.2ms)[0m  [1m[34mSELECT  "teams".* FROM "teams" WHERE "teams"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered students/show.html.erb within layouts/application (2.2ms)
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT  "students".* FROM "students" WHERE "students"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered application/_navigation.html.erb (2.2ms)
+Completed 200 OK in 79ms (Views: 72.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/team_profile" for ::1 at 2019-12-03 12:43:21 -0200
+Processing by TeamsController#profile as HTML
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT  "students".* FROM "students" WHERE "students"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mTeam Load (0.3ms)[0m  [1m[34mSELECT  "teams".* FROM "teams" WHERE "teams"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering teams/profile.html.erb within layouts/application
+  [1m[36mTool Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "tools" WHERE "tools"."team_id" = ? LIMIT ?[0m  [["team_id", 2], ["LIMIT", 1]]
+  [1m[36mStudent Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "students" WHERE "students"."team_id" = ? LIMIT ?[0m  [["team_id", "2"], ["LIMIT", 1]]
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."team_id" = ?[0m  [["team_id", "2"]]
+  Rendered teams/_perfil.html.erb (33.7ms)
+  Rendered teams/profile.html.erb within layouts/application (39.3ms)
+  [1m[36mCACHE Student Load (0.0ms)[0m  [1m[34mSELECT  "students".* FROM "students" WHERE "students"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered application/_navigation.html.erb (2.3ms)
+Completed 200 OK in 124ms (Views: 113.9ms | ActiveRecord: 1.5ms)
+
+
