@@ -1,0 +1,38 @@
+<table>
+  <thead>
+    <tr>
+      <th>Accepted</th>
+      <th>Returned</th>
+      <th>Borrower</th>
+      <th>Owner</th>
+      <th>Tool quantity</th>
+      <th>Start</th>
+      <th>End</th>
+      <th></th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% loans.each do |loan| %>
+    <% @tool = Tool.find(loan.tool_id) %>
+      <tr>
+        <td><%= loan.accepted %></td>
+        <td><%= loan.returned %></td>
+        <td><%= loan.borrower_id %></td>
+        <td><%= loan.owner_id %></td>
+        <td><%= loan.tool_quantity %></td>
+        <td><%= loan.start %></td>
+        <td><%= loan.end %></td>
+        <td><%= link_to 'Show', [@tool,loan] %></td>
+        <% if pending %>
+          <td><%= link_to 'Edit', edit_tool_loan_path(@tool,loan) %></td>
+          <td><%= link_to 'Recusar', [@tool,loan], method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          <td><%= link_to 'Aceitar', tool_loan_path(@tool, loan, :accepted => true, :start => Date.today, :owner_id => student.id), method: :put %></td>
+        <% end %>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+</br>

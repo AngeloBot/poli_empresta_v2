@@ -1,5 +1,6 @@
 class Tool < ApplicationRecord
 	belongs_to :team
+	has_many :loans
 	mount_uploader :photo, ImageUploader
 
 	def self.search(search)

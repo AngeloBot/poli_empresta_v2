@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
-  resources :tools
+
+  resources :tools do
+    resources :loans
+  end
   resources :teams do
     resources :students
     #resources :tools
@@ -8,7 +11,7 @@ Rails.application.routes.draw do
   get 'signup', to: 'students#new', as: 'signup'
   get 'logout', to: 'sessions#destroy', as: 'logout'
   get 'home', to:  'welcome#home', as: 'home'
-
+  resources :loans
   resources :students
   resources :sessions
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

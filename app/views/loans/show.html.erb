@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Accepted:</strong>
+  <%= @loan.accepted %>
+</p>
+
+<p>
+  <strong>Returned:</strong>
+  <%= @loan.returned %>
+</p>
+
+<p>
+  <strong>Borrower:</strong>
+  <%= @loan.borrower_id %>
+</p>
+
+<p>
+  <strong>Owner:</strong>
+  <%= @loan.owner_id %>
+</p>
+
+<p>
+  <strong>Tool quantity:</strong>
+  <%= @loan.tool_quantity %>
+</p>
+
+<p>
+  <strong>Start:</strong>
+  <%= @loan.start %>
+</p>
+
+<p>
+  <strong>End:</strong>
+  <%= @loan.end %>
+</p>
+
+<%= link_to 'Edit', edit_loan_path(@loan) %> |
+<%= link_to 'Back', loans_path %>

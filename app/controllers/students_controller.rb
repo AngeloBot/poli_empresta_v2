@@ -11,6 +11,10 @@ class StudentsController < ApplicationController
   # GET /students/1
   # GET /students/1.json
   def show
+    @team_loans = Team.find(@student.team_id).loans
+    @pending_loans = @team_loans.where(accepted: false)
+    @student_asked_loans = Loan.where(borrower_id: @student.id)
+    @student_approved_loans = Loan.where(owner_id: @student.id)
   end
   
 
