@@ -29,19 +29,22 @@
   <% else %>
     Membro
   <% end %>
-  
+
 </p>
 
 Empréstimos aguardando aprovação:
-<%= render partial: 'loans', locals: {student: @student, loans: @pending_loans, pending: true} %>
+<%= render partial: 'loans', locals: {student: @student, loans: @pending_loans, pending: true, approved: false, rate: false} %>
 
 Empréstimos pedidos:
-<%= render partial: 'loans', locals: {student: @student, loans: @student_asked_loans, pending: false} %>
+<%= render partial: 'loans', locals: {student: @student, loans: @student_asked_loans, pending: false, approved: false, rate: false} %>
 
-Empréstimos concedidos:
-<%= render partial: 'loans', locals: {student: @student, loans: @student_approved_loans, pending: false} %>
+Empréstimos concedidos em aberto:
+<%= render partial: 'loans', locals: {student: @student, loans: @student_approved_loans, pending: false, approved: true, rate: false} %>
 
-<% if session[:student_id]==@student.id%>
+Empréstimos concedidos finalizados:
+<%= render partial: 'loans', locals: {student: @student, loans: @finished_loans, pending: false, approved: false, rate: true} %>
+
+<% if session[:student_id]==@student.id %>
   <%= link_to 'Edit', edit_student_path(@student) %> |
 <% end %>
 

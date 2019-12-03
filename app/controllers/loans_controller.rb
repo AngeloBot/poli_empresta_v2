@@ -47,6 +47,9 @@ class LoansController < ApplicationController
   def update
     respond_to do |format|
       if @loan.update(update_loan_params)
+        if @loan.returned
+          @tool.update(:quantity => @tool.quantity + @loan.tool_quantity)
+        end
         if @loan.borrower_id = session[:student_id]
           format.html { redirect_to Student.find(@loan.borrower_id), notice: 'Loan was successfully updated.' }
         else
