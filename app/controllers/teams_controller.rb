@@ -55,7 +55,7 @@ class TeamsController < ApplicationController
   def update
     respond_to do |format|
       if @team.update(team_params)
-        @student=Student.find(session[:student_id])
+        @student = Student.find(session[:student_id])
         format.html { redirect_to team_path(@student.team_id), notice: 'Team was successfully updated.' }
         format.json { render :show, status: :ok, location: @team }
       else
@@ -83,6 +83,6 @@ class TeamsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def team_params
-      params.require(:team).permit(:name, :description, :photo)
+      params.require(:team).permit(:name, :description, :photo, :password)
     end
 end
