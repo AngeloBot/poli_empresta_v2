@@ -36,8 +36,8 @@ ActiveRecord::Schema.define(version: 20191203163901) do
     t.string "password_digest"
     t.string "photo"
     t.boolean "admin", default: false
-    t.string "team_password"
     t.integer "team_id"
+    t.string "team_password"
   end
 
   create_table "teams", force: :cascade do |t|
