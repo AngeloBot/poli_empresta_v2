@@ -12,23 +12,8 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :accepted %>
-    <%= form.check_box :accepted, id: :loan_accepted %>
-  </div>
-
-  <div class="field">
-    <%= form.label :returned %>
-    <%= form.check_box :returned, id: :loan_returned %>
-  </div>
-
-  <div class="field">
-    <%= form.label :owner_id %>
-    <%= form.number_field :owner_id, id: :loan_owner_id %>
-  </div>
-
-  <div class="field">
     <%= form.label :tool_quantity %>
-    <%= form.number_field :tool_quantity, id: :loan_tool_quantity %>
+    <%= form.number_field :tool_quantity, :in => 1..@tool.quantity, :step => '1', id: :loan_tool_quantity %>
   </div>
 
   <div class="field">

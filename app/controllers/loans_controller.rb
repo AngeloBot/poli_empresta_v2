@@ -26,8 +26,9 @@ class LoansController < ApplicationController
   # POST /loans.json
   def create
     @loan = @tool.loans.new(loan_params)
-    
+
     @loan.borrower_id = session[:student_id]
+    @tool.update(:quantity => @tool.quantity - @loan.tool_quantity)
 
     respond_to do |format|
       if @loan.save
