@@ -2,23 +2,35 @@
 
 <p>
   <strong>Accepted:</strong>
-  <%= @loan.accepted %>
-</p>
+  <% if @loan.accepted %>
+    Yes.
+  <% else %>
+    No.
+  <% end %>
+  </p>
 
+<% if @loan.returned != nil %>
 <p>
-  <strong>Returned:</strong>
-  <%= @loan.returned %>
+  <strong>Returned:</strong>  
+  <% if @loan.returned %>
+    Yes.
+  <% else %>
+    No.
+  <% end %>
 </p>
+<% end %>
 
 <p>
   <strong>Borrower:</strong>
-  <%= @loan.borrower_id %>
+  <%= Student.find(@loan.borrower_id).name %>
 </p>
 
+<% if @loan.owner_id != nil %>
 <p>
   <strong>Owner:</strong>
-  <%= @loan.owner_id %>
+  <%= Student.find(@loan.owner_id).name %>
 </p>
+<% end %>
 
 <p>
   <strong>Tool quantity:</strong>
@@ -35,5 +47,9 @@
   <%= @loan.end %>
 </p>
 
+<% if @loan.owner_id != nil %>
+<% if session[:student_id] == @loan.owner_id %>
 <%= link_to 'Edit', edit_tool_loan_path(@loan) %>
+<% end %>
+<% end %>
 <%= link_to 'Back', :back %>

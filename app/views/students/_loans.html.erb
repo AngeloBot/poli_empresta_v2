@@ -25,7 +25,9 @@
         <% if loan.accepted%>
         <% @owner=Student.find(loan.owner_id) %>
         <td><%= link_to @owner.name, student_path(@owner) %></td>
-        <%end%>
+        <% else %>
+        <td>Not yet approved.</td>
+        <% end %>
         
         <td><%= loan.tool_quantity %></td>
         <td><%= loan.start %></td>
