@@ -8,7 +8,7 @@
 
     <div class="field">
         <%= form.label :password %>
-        <%= form.text_field :password, id: :team_password %>
+        <%= form.password_field :password, id: :team_password %>
     </div>
 
     <div class="field">
@@ -42,14 +42,14 @@
     
         <div class="field">
             <%= student.label :password %>
-            <%= student.text_field :password, id: :student_password %>
+            <%= student.password_field :password, id: :student_password %>
         </div>
     
         <div class="field">
             <%= student.label :password_confirmation %>
-            <%= student.text_field :password_confirmation, id: :student_password_confirmation %>
+            <%= student.password_field :password_confirmation, id: :student_password_confirmation %>
         </div>
-        
+
         <div class="field">
             <%= student.label :photo %>
             <%= student.file_field :photo, id: :student_photo %>
