@@ -35,7 +35,7 @@
   <tbody>
       <tr>
 				<% if team.photo.present? %>
-				<td><%= image_tag(team.photo_url) %></td>
+				<td><%= image_tag(team.photo(:thumb).url) %></td>
 				<% end %>
         <td><%= link_to team.name, team %></td>
         <td><%= team.description %></td>

@@ -34,7 +34,7 @@
   <% team.tools.each do |tool| %>
     <tr>
       <% if tool.photo.present? %>
-      <td><%= image_tag(tool.photo_url)%></td>
+      <td><%= image_tag(tool.photo(:thumb).url)%></td>
       <% end %>
       <td><%= link_to tool.name, tool_path(id: tool.id) %></td>
       <td><%= tool.quantity %></td>
@@ -63,7 +63,7 @@
   <% team.students.each do |student| %>
     <tr>
       <% if student.photo.present? %>
-      <td><%= image_tag(student.photo_url)%></td>
+      <td><%= image_tag(student.photo(:thumb).url)%></td>
       <% end %>
       <td><%= link_to student.name, student_path(id: student.id) %></td>
       <td><%= student.email %></td>

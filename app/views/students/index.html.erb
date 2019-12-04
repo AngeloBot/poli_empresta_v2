@@ -28,7 +28,7 @@
     <% @students.each do |student| %>
       <tr>
 				<% if student.photo.present? %>
-        <td><%= image_tag(student.photo_url) %></td>
+        <td><%= image_tag(student.photo(:thumb).url) %></td>
 				<% end %>
 				<td><%= student.name %></td>
         <td><%= student.email %></td>
