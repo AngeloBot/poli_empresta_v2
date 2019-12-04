@@ -23,6 +23,7 @@ class TeamsController < ApplicationController
   # GET /teams/new
   def new
     @team = Team.new
+    1.times {@team.students.build}
   end
 
   # GET /teams/1/edit
@@ -37,11 +38,9 @@ class TeamsController < ApplicationController
 
     respond_to do |format|
       if @team.save
-        format.html { redirect_to new_student_path }
+        session[:student_id] = @team.students.first.id
+        format.html { redirect_to home_url }
         format.json { render :show, status: :created, location: @team }
-        session[:created_team] = 1
-        session[:team] = @team.id
-        session[:admin_pendente] = true
       else
         format.html { render :new }
         format.json { render json: @team.errors, status: :unprocessable_entity }
@@ -83,6 +82,6 @@ class TeamsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def team_params
-      params.require(:team).permit(:name, :description, :photo, :password)
+      params.require(:team).permit(:name, :description, :photo, :password, students_attributes: [:id, :given_name, :family_name, :email, :password, :password_confirmation, :photo, :admin, :team_id, :team_password, :_destroy])
     end
 end

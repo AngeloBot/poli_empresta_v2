@@ -37,20 +37,16 @@
     <%= form.text_field :password_confirmation, id: :student_password_confirmation %>
   </div>
 
-  <% if !session[:created_team] %>
+  <div class="field">
+    <%= form.label :team_id %>
+    <%#= form.text_field :team_id, id: :student_team_id %>
+    <%= form.select :team_id, Team.all.collect{|s|[s.name, s.id]} %>
+  </div>
 
-    <div class="field">
-      <%= form.label :team_id %>
-      <%#= form.text_field :team_id, id: :student_team_id %>
-      <%= form.select :team_id, Team.all.collect{|s|[s.name, s.id]} %>
-    </div>
-
-    <div class="field">
-      <%= form.label :team_password %>
-      <%= form.text_field :team_password, id: :student_team_password %>
-    </div>
-
-  <%end%>
+  <div class="field">
+    <%= form.label :team_password %>
+    <%= form.text_field :team_password, id: :student_team_password %>
+  </div>
 
   <div class="field">
     <%= form.label :photo %>

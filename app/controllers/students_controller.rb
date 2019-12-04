@@ -33,19 +33,12 @@ class StudentsController < ApplicationController
 
     @student = Student.new(student_params)
 
-    if session[:created_team]
-      @student.team_id = session[:team]
-      @student.admin = true
-      session[:admin_pendente] = false
-      @student.team_password = Team.find(@student.team_id).password
-    end
-
     if @student.team_password == Team.find(@student.team_id).password
       respond_to do |format|
         if @student.save
+          session[:student_id] = @student.id
           format.html { redirect_to home_path, notice: 'Student was successfully created.' }
           format.json { render :show, status: :created, location: @student }
-          session[:student_id] = @student.id
 
           #redirect_to root_url, notice: "Thank you for signing up!"
         else

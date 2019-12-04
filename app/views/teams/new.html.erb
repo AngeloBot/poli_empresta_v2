@@ -1,5 +1,69 @@
 <h1>New Team</h1>
 
-<%= render 'form', team: @team %>
+<%= form_for(@team) do |form| %>
+    <div class="field">
+        <%= form.label :name %>
+        <%= form.text_field :name, id: :team_name %>
+    </div>
+
+    <div class="field">
+        <%= form.label :password %>
+        <%= form.text_field :password, id: :team_password %>
+    </div>
+
+    <div class="field">
+        <%= form.label :description %>
+        <%= form.text_area :description, id: :team_description %>
+    </div>
+
+    <div class="field">
+        <%= form.label :photo %>
+        <%= form.file_field :photo, id: :team_photo %>
+    </div>
+
+    <%= form.fields_for :students do |student| %>
+
+        <h1>Team Admin</h1>
+
+        <div class="field">
+            <%= student.label :given_name %>
+            <%= student.text_field :given_name, id: :student_given_name %>
+        </div>
+    
+        <div class="field">
+            <%= student.label :family_name %>
+            <%= student.text_field :family_name, id: :student_family_name %>
+        </div>
+    
+        <div class="field">
+            <%= student.label :email %>
+            <%= student.text_field :email, id: :student_email %>
+         </div>
+    
+        <div class="field">
+            <%= student.label :password %>
+            <%= student.text_field :password, id: :student_password %>
+        </div>
+    
+        <div class="field">
+            <%= student.label :password_confirmation %>
+            <%= student.text_field :password_confirmation, id: :student_password_confirmation %>
+        </div>
+        
+        <div class="field">
+            <%= student.label :photo %>
+            <%= student.file_field :photo, id: :student_photo %>
+        </div>
+
+        <%= student.hidden_field :admin, value: true %>
+        <%= student.hidden_field :team_id, value: @team.id %>
+        <%= student.hidden_field :team_password, value: @team.password %>
+    <% end %>
+
+    <div class="actions">
+    <%= form.submit %>
+    </div>
+
+<% end %>
 
 <%= link_to 'Back', :back %>
