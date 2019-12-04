@@ -1,20 +1,22 @@
-<p>
+<div class='topnav'>
 
 	<% if current_student %>
-		<%= link_to "Home", home_path %>
-		<%= link_to "Search Tools", tools_path %>
-		<%= link_to "Search Students", students_path%>
-		<%= link_to "Search Teams", teams_path %>
-		<%= link_to "My Team", team_path(current_student.team_id) %>
-		<%= link_to "My Profile", current_student %> |
-		Logged in as <%= current_student.email %>. |
-		<%= link_to "Log Out", logout_path %> |
+		<%= active_link_to "Home", home_path, class: 'button' %>
+		<%= active_link_to "Search Tools", tools_path, class: 'button', active: :exclusive %>
+		<%= active_link_to "Search Students", students_path, active: :exclusive %>
+		<%= active_link_to "Search Teams", teams_path, active: :exclusive %>
+		<%= active_link_to "My Team", team_path(current_student.team_id) %>
+		<%= active_link_to "My Profile", current_student %>
+		<div class='topnav-right'>
+			<div class='log'>
+				Logged in as <%= current_student.email %>.
+			</div>
+			<%= link_to "Log Out", logout_path %>
+		</div>
 
 	<% else %>
-	<%= link_to 'Sign Up as Member', new_student_path %> |
-	<%= link_to 'Sign Up as Team Admin', new_team_path %> |	
-	<%= link_to "Log In", new_session_path %>
+	<%= active_link_to 'Sign Up as Member', new_student_path %>
+	<%= active_link_to 'Sign Up as Team Admin', new_team_path %>
+	<%= active_link_to "Log In", new_session_path %>
 	<% end %>
-</p>
-
-<hr>
+</div>

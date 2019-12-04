@@ -13,9 +13,7 @@
 <table>
   <thead>
     <tr>
-			<% if @student.photo.present? %>
 			<th></th>
-			<% end %>
       <th>Name</th>
       <th>Email</th>
       <th>Team</th>
@@ -25,10 +23,10 @@
   </thead>
 
   <tbody>
-    <% @students.each do |student| %>
       <tr>
+				<% @students.each do |student| %>
 				<% if student.photo.present? %>
-        <td><%= image_tag(student.photo(:thumb).url) %></td>
+        <td><%= image_tag(student.photo().url) %></td>
 				<% end %>
 				<td><%= student.name %></td>
         <td><%= student.email %></td>
