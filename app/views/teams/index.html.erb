@@ -17,10 +17,13 @@
 
 <h1>Teams</h1>
 
+<% @teams.each do |team| %>
 <table>
   <thead>
     <tr>
+			<% team.photo.present? %>
 			<th><!--Photo--></th>
+			<% end %>
       <th>Name</th>
       <th>Description</th>
       <%#<th>Tool Quantity</th>%>
@@ -30,9 +33,10 @@
   </thead>
 
   <tbody>
-    <% @teams.each do |team| %>
       <tr>
-				<td><%= image_tag(team.photo_url) %></td>
+				<% if team.photo.present? %>
+				<td><%= image_tag(team.photo(:thumb).url) %></td>
+				<% end %>
         <td><%= link_to team.name, team %></td>
         <td><%= team.description %></td>
         <td><%#= team.tools.count %></td>
