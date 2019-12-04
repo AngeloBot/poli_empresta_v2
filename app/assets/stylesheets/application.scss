@@ -15,8 +15,8 @@
  */
 
 $topnav-color: #ffff00;
-$active-color: #4CAF50;
-$hover-color: #ddd;
+$active-color: white;
+$hover-color: white;
 
 body {
   background-color: rgb(1,33,105);
@@ -47,7 +47,7 @@ body {
    /* Add a color to the active/current link */
     &.active {
       background-color: $active-color;
-      color: white;
+      color: black;
     }
   }
 }
@@ -76,7 +76,7 @@ body {
    /* Add a color to the active/current link */
     &.active {
       background-color: $active-color;
-      color: white;
+      color: black;
     }
   }
 }

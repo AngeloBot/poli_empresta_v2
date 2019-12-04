@@ -30,12 +30,31 @@
 </p>
 
 <p>
-  <strong>Team:</strong>
-  <%= @tool.team.name %>
+<table>
+  <thead>
+    <tr>
+			<th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+      <tr>
+        <td><strong>Team:</strong></td>
+        <td><%= link_to @tool.team.name, team_path(@tool.team_id) %></td>
+      </tr>
+  </tbody>
+</table>
 </p>
 
+<p>
 <% if Tool.available?(@tool) && @tool.team != @student.team %>
   <%= link_to 'Pegar Emprestado', new_tool_loan_path(@tool) %>
 <% end %>
-<%= link_to 'Edit', edit_tool_path(@tool) %>
+
+
+<% if @tool.team == @student.team && @student.admin%>
+  <%= link_to 'Edit', edit_tool_path(@tool) %>
+<%end%>
 <%= link_to 'Back', :back %>
+</p>

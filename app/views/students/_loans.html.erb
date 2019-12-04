@@ -5,6 +5,7 @@
       <!--<th>Returned</th>-->
       <th>Borrower</th>
       <th>Owner</th>
+      <th>Tool</th>
       <th>Tool quantity</th>
       <th>Start</th>
       <th>End</th>
@@ -28,7 +29,7 @@
         <% else %>
         <td>Not yet approved.</td>
         <% end %>
-        
+        <td><%= link_to Tool.find(loan.tool_id).name, Tool.find(loan.tool_id) %></td>
         <td><%= loan.tool_quantity %></td>
         <td><%= loan.start %></td>
         <td><%= loan.end %></td>
