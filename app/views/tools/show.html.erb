@@ -1,6 +1,8 @@
 <p id="notice"><%= notice %></p>
 
+<% if @tool.photo.present? %>
 <%= image_tag(@tool.photo_url) %>
+<% end %>
 
 <p>
   <strong>Name:</strong>

@@ -1,6 +1,8 @@
 <p id="notice"><%= notice %></p>
 
-<%= image_tag(@student.photo_url) %>
+<% if @student.photo.present? %>
+  <%= image_tag(@student.photo_url) %>
+<% end %>
 
 <p>
   <strong>Given name:</strong>

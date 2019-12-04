@@ -27,7 +27,9 @@
   <tbody>
     <% @tools.each do |tool| %>
       <tr>
-        <td><%= image_tag(tool.photo_url) %>
+				<% if tool.photo.present? %>
+				<td><%= image_tag(tool.photo_url) %>
+				<% end %>
         <td><%= tool.name %></td>
         <td><%= tool.description %></td>
         <td><%= tool.quantity %></td>
@@ -38,11 +40,10 @@
           <td><%= link_to 'Edit', edit_tool_path(tool) %></td>
           <td><%= link_to 'Destroy', tool, method: :delete, data: { confirm: 'Are you sure?' } %></td>
         <%end%>
-        
+
       </tr>
     <% end %>
   </tbody>
 </table>
 
 <br>
-
