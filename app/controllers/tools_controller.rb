@@ -63,7 +63,8 @@ class ToolsController < ApplicationController
   def destroy
     @tool.destroy
     respond_to do |format|
-      format.html { redirect_to tools_url, notice: 'Tool was successfully destroyed.' }
+      @student = Student.find(session[:student_id])
+      format.html { redirect_to team_path(@student.team_id), notice: 'Tool was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
