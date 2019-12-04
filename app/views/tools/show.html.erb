@@ -35,7 +35,7 @@
 </p>
 
 <% if Tool.available?(@tool) && @tool.team != @student.team %>
-  <%= link_to 'Pegar Emprestado', new_tool_loan_path(@tool) %> |
+  <%= link_to 'Pegar Emprestado', new_tool_loan_path(@tool) %>
 <% end %>
-<%= link_to 'Edit', edit_tool_path(@tool) %> |
+<%= link_to 'Edit', edit_tool_path(@tool) %>
 <%= link_to 'Back', :back %>
