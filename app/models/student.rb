@@ -14,4 +14,15 @@ class Student < ApplicationRecord
 	def name
 		given_name+" "+family_name
 	end
+
+	validates_presence_of:given_name
+	validates_presence_of:family_name
+	
+	validates_format_of:email, 
+		with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\Z/i,
+			message:"doesn't look like aproper email address"
+	
+	validates_uniqueness_of:email,case_sensitive: false,
+		scope: [:given_name,:password],
+		message:"has already been entered"
 end

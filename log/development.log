@@ -17832,3 +17832,106 @@ Processing by TeamsController#show as HTML
 Completed 200 OK in 110ms (Views: 97.6ms | ActiveRecord: 1.1ms)
 
 
+Started GET "/logout" for 127.0.0.1 at 2019-12-04 14:25:40 -0200
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SessionsController#destroy as HTML
+Redirected to http://localhost:3000/
+Completed 302 Found in 4ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-12-04 14:25:40 -0200
+Processing by WelcomeController#entrance as HTML
+  Rendering welcome/entrance.html.erb within layouts/application
+  Rendered welcome/entrance.html.erb within layouts/application (3.5ms)
+  Rendered application/_navigation.html.erb (1.0ms)
+Completed 200 OK in 432ms (Views: 426.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/sessions/new" for 127.0.0.1 at 2019-12-04 14:25:49 -0200
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (0.9ms)
+  Rendered application/_navigation.html.erb (0.8ms)
+Completed 200 OK in 88ms (Views: 82.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/sessions" for 127.0.0.1 at 2019-12-04 14:25:50 -0200
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"69LDLMs9as+1TADH52V8E0ajqSkuxKcq2n+T3BuQlV4Wc+OFU0Y7L4kohiXqIt8+26UxhW1g1r4DH6LB3DcEKw==", "email"=>"333", "password"=>"[FILTERED]", "commit"=>"Log In"}
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT  "students".* FROM "students" WHERE "students"."email" = ? LIMIT ?[0m  [["email", "333"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/home
+Completed 302 Found in 294ms (ActiveRecord: 1.5ms)
+
+
+Started GET "/home" for 127.0.0.1 at 2019-12-04 14:25:51 -0200
+Processing by WelcomeController#home as HTML
+  [1m[36mStudent Load (0.7ms)[0m  [1m[34mSELECT  "students".* FROM "students" WHERE "students"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mTeam Load (0.2ms)[0m  [1m[34mSELECT  "teams".* FROM "teams" WHERE "teams"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering welcome/home.html.erb within layouts/application
+  [1m[36mLoan Load (0.2ms)[0m  [1m[34mSELECT "loans".* FROM "loans" WHERE "loans"."borrower_id" = ?[0m  [["borrower_id", 3]]
+  [1m[36mTool Load (0.4ms)[0m  [1m[34mSELECT  "tools".* FROM "tools" WHERE "tools"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Student Load (0.0ms)[0m  [1m[34mSELECT  "students".* FROM "students" WHERE "students"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mTool Load (0.2ms)[0m  [1m[34mSELECT  "tools".* FROM "tools" WHERE "tools"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE Student Load (0.0ms)[0m  [1m[34mSELECT  "students".* FROM "students" WHERE "students"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered students/_loans.html.erb (27.5ms)
+  [1m[36mLoan Load (0.2ms)[0m  [1m[34mSELECT "loans".* FROM "loans" WHERE "loans"."owner_id" = ? AND "loans"."returned" IS NULL[0m  [["owner_id", 3]]
+  Rendered students/_loans.html.erb (1.1ms)
+  [1m[36mLoan Load (1.1ms)[0m  [1m[34mSELECT "loans".* FROM "loans" INNER JOIN "tools" ON "loans"."tool_id" = "tools"."id" WHERE "tools"."team_id" = ? AND "loans"."accepted" = ?[0m  [["team_id", 2], ["accepted", "f"]]
+  Rendered students/_loans.html.erb (16.4ms)
+  Rendered welcome/home.html.erb within layouts/application (64.1ms)
+  [1m[36mCACHE Student Load (0.0ms)[0m  [1m[34mSELECT  "students".* FROM "students" WHERE "students"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered application/_navigation.html.erb (4.0ms)
+Completed 200 OK in 244ms (Views: 150.3ms | ActiveRecord: 6.0ms)
+
+
+Started GET "/logout" for 127.0.0.1 at 2019-12-04 14:26:33 -0200
+Processing by SessionsController#destroy as HTML
+Redirected to http://localhost:3000/
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-12-04 14:26:33 -0200
+Processing by WelcomeController#entrance as HTML
+  Rendering welcome/entrance.html.erb within layouts/application
+  Rendered welcome/entrance.html.erb within layouts/application (0.3ms)
+  Rendered application/_navigation.html.erb (4.2ms)
+Completed 200 OK in 97ms (Views: 92.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/sessions/new" for 127.0.0.1 at 2019-12-04 14:26:35 -0200
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (1.0ms)
+  Rendered application/_navigation.html.erb (1.0ms)
+Completed 200 OK in 136ms (Views: 130.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/sessions" for 127.0.0.1 at 2019-12-04 14:26:38 -0200
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"n4SoQkrrZjPSeDL1lhMLdvushg92kacqGkDgrekP7bViJYjr0pA30+4ctBebVKhbZqoeozU11r7DINGwLqh8wA==", "email"=>"222", "password"=>"[FILTERED]", "commit"=>"Log In"}
+  [1m[36mStudent Load (0.3ms)[0m  [1m[34mSELECT  "students".* FROM "students" WHERE "students"."email" = ? LIMIT ?[0m  [["email", "222"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/home
+Completed 302 Found in 228ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/home" for 127.0.0.1 at 2019-12-04 14:26:39 -0200
+Processing by WelcomeController#home as HTML
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT  "students".* FROM "students" WHERE "students"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mTeam Load (0.3ms)[0m  [1m[34mSELECT  "teams".* FROM "teams" WHERE "teams"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering welcome/home.html.erb within layouts/application
+  [1m[36mLoan Load (0.4ms)[0m  [1m[34mSELECT "loans".* FROM "loans" WHERE "loans"."borrower_id" = ?[0m  [["borrower_id", 2]]
+  Rendered students/_loans.html.erb (2.0ms)
+  [1m[36mLoan Load (0.2ms)[0m  [1m[34mSELECT "loans".* FROM "loans" WHERE "loans"."owner_id" = ? AND "loans"."returned" IS NULL[0m  [["owner_id", 2]]
+  Rendered students/_loans.html.erb (1.1ms)
+  [1m[36mLoan Load (1.6ms)[0m  [1m[34mSELECT "loans".* FROM "loans" INNER JOIN "tools" ON "loans"."tool_id" = "tools"."id" WHERE "tools"."team_id" = ? AND "loans"."accepted" = ?[0m  [["team_id", 1], ["accepted", "f"]]
+  [1m[36mTool Load (0.2ms)[0m  [1m[34mSELECT  "tools".* FROM "tools" WHERE "tools"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT  "students".* FROM "students" WHERE "students"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mTool Load (0.2ms)[0m  [1m[34mSELECT  "tools".* FROM "tools" WHERE "tools"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE Student Load (0.0ms)[0m  [1m[34mSELECT  "students".* FROM "students" WHERE "students"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered students/_loans.html.erb (10.3ms)
+  Rendered welcome/home.html.erb within layouts/application (32.7ms)
+  [1m[36mCACHE Student Load (0.0ms)[0m  [1m[34mSELECT  "students".* FROM "students" WHERE "students"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered application/_navigation.html.erb (3.0ms)
+Completed 200 OK in 129ms (Views: 116.6ms | ActiveRecord: 3.3ms)
+
+

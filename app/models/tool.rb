@@ -15,4 +15,7 @@ class Tool < ApplicationRecord
 		tool.quantity > 0
 	end
 
+	validates_presence_of:name
+	validates_presence_of:quantity
+	validates_numericality_of:quantity ,allow_nil: true, greater_than: 0
 end
