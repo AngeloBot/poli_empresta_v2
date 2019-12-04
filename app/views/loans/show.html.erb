@@ -11,7 +11,7 @@
 
 <% if @loan.returned != nil %>
 <p>
-  <strong>Returned:</strong>  
+  <strong>Returned:</strong>
   <% if @loan.returned %>
     Yes.
   <% else %>
@@ -49,7 +49,7 @@
 
 <% if @loan.owner_id != nil %>
 <% if session[:student_id] == @loan.owner_id %>
-<%= link_to 'Edit', edit_tool_loan_path(@loan) %>
+<%= link_to 'Edit', edit_tool_loan_path(@loan.tool_id, @loan) %>
 <% end %>
 <% end %>
 <%= link_to 'Back', :back %>
