@@ -11,6 +11,7 @@ class ToolsController < ApplicationController
   # GET /tools/1
   # GET /tools/1.json
   def show
+    @student=Student.find(session[:student_id])
   end
 
   # GET /tools/new

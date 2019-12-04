@@ -41,7 +41,7 @@
       <td><%= tool.description %></td>
       <td><%= link_to 'Show', tool %></td>
       <% if edit  %>
-        <td><%= link_to 'Edit', tool, method: :edit %></td>
+        <td><%= link_to 'Edit', edit_tool_path(tool) %></td>
         <td><%= link_to 'Destroy', tool, method: :delete, data: { confirm: 'Are you sure you want to delete this tool?' } %></td>
       <% end %>
     </tr>
