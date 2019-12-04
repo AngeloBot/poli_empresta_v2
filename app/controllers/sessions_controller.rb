@@ -15,7 +15,7 @@ class SessionsController < ApplicationController
   def destroy
 
     if session[:admin_pendente]
-      team.session[:team].destroy
+      #Team.find(session[:team]).destroy
     end
     session[:student_id] = nil
     session[:created_team] = false

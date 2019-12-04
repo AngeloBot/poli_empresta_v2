@@ -14,14 +14,31 @@
   <%= @student.family_name %>
 </p>
 
+<table>
+  <td></td>
+  <td></td>
 <p>
+
   <strong>Email:</strong>
   <%= @student.email %>
 </p>
 
 <p>
-  <strong>Team:</strong>
-  <%= link_to @student.team.name, team_path(@student.team_id) %>
+<table>
+  <thead>
+    <tr>
+			<th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+      <tr>
+        <td><strong>Team:</strong></td>
+        <td><%= link_to @student.team.name, team_path(@student.team_id) %></td>
+      </tr>
+  </tbody>
+</table>
 </p>
 
 <p>
@@ -33,12 +50,6 @@
   <% end %>
 
 </p>
-
-Empréstimos aguardando aprovação:
-<%= render partial: 'loans', locals: {student: @student, loans: @pending_loans, pending: true, approved: false, rate: false} %>
-
-Empréstimos pedidos:
-<%= render partial: 'loans', locals: {student: @student, loans: @student_asked_loans, pending: false, approved: false, rate: false} %>
 
 Empréstimos concedidos em aberto:
 <%= render partial: 'loans', locals: {student: @student, loans: @student_approved_loans, pending: false, approved: true, rate: false} %>

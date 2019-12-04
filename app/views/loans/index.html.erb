@@ -5,7 +5,7 @@
 <table>
   <thead>
     <tr>
-      <th>Accepted</th>
+      <%#<th>Accepted</th>%>
       <th>Returned</th>
       <th>Borrower</th>
       <th>Owner</th>
@@ -19,10 +19,10 @@
   <tbody>
     <% @loans.each do |loan| %>
       <tr>
-        <td><%= loan.accepted %></td>
+        <%#<td><%= loan.accepted %></td>%>
         <td><%= loan.returned %></td>
-        <td><%= loan.borrower_id %></td>
-        <td><%= loan.owner_id %></td>
+        <td><%= link_to Student.find(loan.borrower_id).name, student_path(loan.borrower_id) %></td>
+        <td><%= link_to Student.find(loan.owner_id).name, student_path(loan.owner_id) %></td>
         <td><%= loan.tool_quantity %></td>
         <td><%= loan.start %></td>
         <td><%= loan.end %></td>

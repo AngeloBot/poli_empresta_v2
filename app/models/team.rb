@@ -2,6 +2,7 @@ class Team < ApplicationRecord
 	has_many :tools, dependent: :destroy
 	has_many :students, dependent: :destroy
 	has_many :loans, :through => :tools
+	accepts_nested_attributes_for :students
 
 	mount_uploader :photo, ImageUploader
 
