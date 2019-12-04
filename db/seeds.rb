@@ -25,3 +25,6 @@ Tool.create(name: 'Martelo', description: 'Martelo de unha 29mm', quantity: 1, p
 
 Tool.create(name: 'Chave de fenda', description: 'Chave de fenda 5mm', quantity: 2, photo: File.open(Rails.root + 'public/uploads/seed/B1.jpg', "r"), team_id: Team.second.id)
 Tool.create(name: 'Serrote', description: 'Cabo de madeira', quantity: 2, photo: File.open(Rails.root + 'public/uploads/seed/B2.jpg', "r"), team_id: Team.second.id)
+
+Tool.create(name: 'Lixadeira Orbital', description: 'Black & Decker 220V', quantity: 2, photo: File.open(Rails.root + 'public/uploads/seed/C1.jpg', "r"), team_id: Team.third.id)
+Tool.create(name: 'Arco de Serra', description: 'Starrett', quantity: 2, photo: File.open(Rails.root + 'public/uploads/seed/C2.jpg', "r"), team_id: Team.third.id)

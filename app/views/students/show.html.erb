@@ -14,14 +14,31 @@
   <%= @student.family_name %>
 </p>
 
+<table>
+  <td></td>
+  <td></td>
 <p>
+
   <strong>Email:</strong>
   <%= @student.email %>
 </p>
 
 <p>
-  <strong>Team:</strong>
-  <%= link_to @student.team.name, team_path(@student.team_id) %>
+<table>
+  <thead>
+    <tr>
+			<th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+      <tr>
+        <td><strong>Team:</strong></td>
+        <td><%= link_to @student.team.name, team_path(@student.team_id) %></td>
+      </tr>
+  </tbody>
+</table>
 </p>
 
 <p>
@@ -34,12 +51,6 @@
 
 </p>
 
-Empréstimos aguardando aprovação:
-<%= render partial: 'loans', locals: {student: @student, loans: @pending_loans, pending: true, approved: false, rate: false} %>
-
-Empréstimos pedidos:
-<%= render partial: 'loans', locals: {student: @student, loans: @student_asked_loans, pending: false, approved: false, rate: false} %>
-
 Empréstimos concedidos em aberto:
 <%= render partial: 'loans', locals: {student: @student, loans: @student_approved_loans, pending: false, approved: true, rate: false} %>
 
@@ -47,7 +58,7 @@ Empréstimos concedidos finalizados:
 <%= render partial: 'loans', locals: {student: @student, loans: @finished_loans, pending: false, approved: false, rate: true} %>
 
 <% if session[:student_id]==@student.id %>
-  <%= link_to 'Edit', edit_student_path(@student) %> |
+  <%= link_to 'Edit', edit_student_path(@student) %>
 <% end %>
 
-<%= link_to 'Back', students_path %>
+<%= link_to 'Back', :back %>

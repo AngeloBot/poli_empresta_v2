@@ -2,4 +2,9 @@
 
 <%= render 'form', student: @student %>
 
-<%= link_to 'Back', students_path %>
+<% if session[:created_team] %>
+<% @team=Team.find(session[:team])%>
+<%= link_to 'Back',  @team , method: :delete%>
+<%else%>
+<%= link_to 'Back', :back %>
+<%end%>

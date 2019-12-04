@@ -24,7 +24,7 @@
 <% if !team.tools.empty? %>
   <table>
     <tr>
-      <% @student.photo.present? %>
+      <% if @student.photo.present? %>
       <th></th>
       <% end %>
       <th>Name</th>
@@ -34,14 +34,14 @@
   <% team.tools.each do |tool| %>
     <tr>
       <% if tool.photo.present? %>
-      <td><%= image_tag(tool.photo(:thumb).url)%></td>
+      <td><%= image_tag(tool.photo().url)%></td>
       <% end %>
       <td><%= link_to tool.name, tool_path(id: tool.id) %></td>
       <td><%= tool.quantity %></td>
       <td><%= tool.description %></td>
       <td><%= link_to 'Show', tool %></td>
       <% if edit  %>
-        <td><%= link_to 'Edit', tool, method: :edit %></td>
+        <td><%= link_to 'Edit', edit_tool_path(tool) %></td>
         <td><%= link_to 'Destroy', tool, method: :delete, data: { confirm: 'Are you sure you want to delete this tool?' } %></td>
       <% end %>
     </tr>
@@ -63,7 +63,7 @@
   <% team.students.each do |student| %>
     <tr>
       <% if student.photo.present? %>
-      <td><%= image_tag(student.photo(:thumb).url)%></td>
+      <td><%= image_tag(student.photo().url)%></td>
       <% end %>
       <td><%= link_to student.name, student_path(id: student.id) %></td>
       <td><%= student.email %></td>

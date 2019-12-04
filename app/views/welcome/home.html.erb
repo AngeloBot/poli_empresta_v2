@@ -1,0 +1,8 @@
+Empréstimos pedidos:
+<%= render partial: 'students/loans', locals: {student: @student, loans: @student_asked_loans, pending: false, approved: false, rate: false} %>
+
+Empréstimos concedidos em aberto:
+<%= render partial: 'students/loans', locals: {student: @student, loans: @student_approved_loans, pending: false, approved: true, rate: false} %>
+
+Empréstimos aguardando aprovação:
+<%= render partial: 'students/loans', locals: {student: @student, loans: @pending_loans, pending: true, approved: false, rate: false} %>
