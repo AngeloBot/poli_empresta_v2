@@ -8,13 +8,6 @@
 	</p>
 <% end %>
 
-<% @teams.each do |team| %>
-	<% if team.students.empty? %>
-		<% team.destroy %>
-	<% end %>
-<% end %>
-
-
 <h1>Teams</h1>
 
 <table>
