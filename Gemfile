@@ -7,7 +7,7 @@ end
 
 gem 'active_link_to'
 #Upload
-gem 'carrierwave', '~> 2.0'
+gem 'carrierwave', '~> 2.1'
 #Processamento de imagem
 gem 'mini_magick'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
